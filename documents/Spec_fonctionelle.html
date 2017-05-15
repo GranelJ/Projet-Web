@@ -1,0 +1,23 @@
+Spec_Fonctionnelle
+
+utilisateur : 
+	CreateUtil : mail x mdp => utilisateur #creer utilsateur
+	EditPasswordUtil : idutilisateur x Varchar => utilsateur #modif mdp utilisateur
+	DeleteUtil : idutil => void #supprime un utilisateur
+
+film :
+	AddFilm : nomfilm x anneefilm x notefilm x vu => film #cree un film 
+	EditFilm : 
+	DeleteFilm : idfilm => void #supprime un  film
+	SelectOne : idfilm => film #Renvoi un film
+	SelectByActeur : idacteur => film x film x ... #Renvoi tous les film correspondant à l'acteur
+	SelectByRealisateur : idrealisateur => film x film x ... #Renvoi tous les film correspond au realisateur
+	SelectAll : => film x film x ... #renvoi tous les films
+
+acteur :
+	AddActeur : nomacteur x prenomacteur => acteur #creer un acteur
+	DeleteActeur : idacteur => void #supprime un acteur
+
+realisateur :
+	AddRealisateur : nomrealisateur x prenomrealisateur => realisateur #creer un realisateur
+	DeleteRealisateur : idrealisateur => void #supprime un realisateur
