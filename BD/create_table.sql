@@ -5,37 +5,37 @@ DROP TABLE IF EXISTS acteur;
 DROP TABLE IF EXISTS realisateur;
 
 CREATE TABLE utilisateur(
-	idutilisateur SERIAL;
-	emailutil VARCHAR(50);
-	mdputil VARCHAR(50);
-	CONSTRAINT PK_utilisateur PRIMARY_KEY (idutilisateur)
+	id_utilisateur SERIAL;
+	email_util VARCHAR(50);
+	mdp_util VARCHAR(50);
+	CONSTRAINT PK_utilisateur PRIMARY_KEY (id_utilisateur)
 );
 
 CREATE TABLE film(
-	idfilm SERIAL;
-	nomfilm VARCHAR(50);
-	anneefilm INTEGER;
-	notefilm INTEGER;
+	id_film SERIAL;
+	nom_film VARCHAR(50);
+	annee_film INTEGER;
+	note_film INTEGER;
 	vu BOOLEAN;
-	CONSTRAINT PK_film PRIMARY_KEY (idfilm)
+	CONSTRAINT PK_film PRIMARY_KEY (id_film)
 );
 
 CREATE TABLE categorie_film(
-	idcatfilm SERIAL;
-	libcat VARCHAR(50);
-	CONSTRAINT PK_categorie_film PRIMARY_KEY (idcatfilm)
+	id_catfilm SERIAL;
+	lib_cat VARCHAR(50);
+	CONSTRAINT PK_categorie_film PRIMARY_KEY (id_catfilm)
 );
 
 CREATE TABLE acteur(
-	idacteur SERIAL;
-	nomacteur VARCHAR(50);
-	prenomacteur VARCHAR(50);
-	CONSTRAINT PK_acteur PRIMARY_KEY (idacteur)
+	id_acteur SERIAL;
+	nom_acteur VARCHAR(50);
+	prenom_acteur VARCHAR(50);
+	CONSTRAINT PK_acteur PRIMARY_KEY (id_acteur)
 );
 
 CREATE TABLE realisateur(
-	idrealisateur SERIAL;
-	nomrealisateur VARCHAR(50);
-	prenomrealisateur VARCHAR(50);
-	CONSTRAINT PK_realisateur PRIMARY_KEY (idrealisateur)
+	id_realisateur SERIAL;
+	nom_realisateur VARCHAR(50);
+	prenom_realisateur VARCHAR(50);
+	CONSTRAINT PK_realisateur PRIMARY_KEY (id_realisateur)
 );
