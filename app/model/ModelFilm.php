@@ -41,9 +41,11 @@ class ModelFilm extends Model{
 	**/
 	public function createFilm($data){
 		try{
-			$postgres = 'INSERT INTO '.$this->table'(nom_film, annee_film)	
-			VALUES(:nom_film, :annee_film)';
-			$req = $this->query($postgres,array(':nom_film'=>$data['nom'], ':annee_film'=>$data['annee']));
+			$postgres = 'INSERT INTO '.$this->table'(nom_film, annee_film, cat_film)	
+			VALUES(:nom_film, :annee_film, :cat)';
+			$req = $this->query($postgres,array(':nom_film'=>$data['nom'], 
+												':annee_film'=>$data['annee'], 
+												':cat'=>$data['cat']));
 		}
 		catch(PDOException $e){
 			echo($e->getMessage());
@@ -68,21 +70,39 @@ class ModelFilm extends Model{
    	
    	/**
    	 *Modifie les informations d'un film
-   	 *@param $idfilm film a modifier
-   	 *@param $newName nouveau nom du film
-   	 *@param $newCat nouvelle categorie du film
-   	 *@param $newAnnee nouvelle annee du film
+   	 *@param $data donnee du formulaire
+   	 *@param $idfilm id du film a modifier
    	**/
-   	public function editFilm($idfilm, $newName, $newCat, $newAnnee){
+   	public function editFilm($idfilm, $data){
    		try{
    			$postgres = 'UPDATE '.$this->table' SET nom_film = :nomfilm , annee_film = :anneefilm, cat_film = :catfilm WHERE '/$this->pk_key.' = :idfilm';
-   			$req = $this->query($postgres,array(":nomfilm"=> $newName,
-   												":anneefilm"=> $newAnnee,
-   												":catfilm"=> $newCat));
+   			$req = $this->query($postgres,array(":nomfilm"=> $data['nom'],
+   												":anneefilm"=> $data['annee'],
+   												":catfilm"=> $data['cat']));
    		}
    		catch(PDOException $e){
    			echo($e->getMessage());
    			die("<br> Erreur lors de la modifiation du film dans la table" . $this->table);
+   		}
+   	}
+
+   	/**
+   	 *Recupere l'id d'un film
+   	 *@param $nomfilm nom du film cherche
+   	 *@param $anneefilm annee du film cherche
+   	**/
+   	public function getIdFilm($nomfilm, $anneefilm){
+   		try{
+   			$postgres = 'SELECT * FROM'.$this->table' WHERE nom_film = :nom AND anneefilm = :annee';
+   			$req = $this->query($postgres, array(":nom"=>$nomfilm),
+   												 ":annee"=>$anneefilm));
+   			$res = $req->fetch(PDO::FETCH_ASSOC);
+   			return $res; 
+   		}
+   		catch(PDOException $e)
+   		{
+   			echo($e->getMessage());
+   			die("<br> Erreur lors de la récupération de l'id du film dans la table" . $this->table);
    		}
    	}
 }
