@@ -36,15 +36,16 @@ class ModelUtilisateur extends Model{
    	}
    	/**
    	 *Creer un utilisateur
-   	 *@param $data donnee du formulaire
+   	 *@param $email email de l'utilisateur
+       *@param $mdp mot de passe de l'utilisateur
    	**/
-   	public function createUtilisateur($data){
+   	public function createUtilisateur($email, $mdp){
    		try{
    			$postgres = 'INSERT INTO '.$this->table.'(email_util, mdp_util)
    			 VALUES(:email_util, :mdp_util)';
    			$req = $this->querry($postgres, array(
-   											':email_util' => $data['email'],
-   											':mdp_util'=> $data['mdp']));
+   											':email_util' => $email,
+   											':mdp_util'=> $mdp));
    		}
    		catch(PDOException $e)
    		{

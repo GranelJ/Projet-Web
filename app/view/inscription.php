@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Connexion</title>
+		<title>Inscription</title>
 	</head>
 
 	<body>
@@ -10,6 +10,8 @@
 			<input type="text" name="email"><br>
 			Mot de Passe : <br>
 			<input type="text" name="mdp"><br>
+			Confirmation mot de passe : <br>
+			<input type="text" name="Cmdp"><br>
 			<input type="Submit" name="inscrit">
 		</form>
 	</body>

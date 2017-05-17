@@ -37,15 +37,17 @@ class ModelFilm extends Model{
 
 	/**
 	 *Creer un film
-	 *@param $data donnee du formulaire
+	 *@param $nomfilm nom du film
+	 *@param $anneefilm annee du film
+	 *@param $catfilm categorie du film
 	**/
-	public function createFilm($data){
+	public function createFilm($nomfilm, $anneefilm, $catfilm){
 		try{
 			$postgres = 'INSERT INTO '.$this->table'(nom_film, annee_film, cat_film)	
 			VALUES(:nom_film, :annee_film, :cat)';
-			$req = $this->query($postgres,array(':nom_film'=>$data['nom'], 
-												':annee_film'=>$data['annee'], 
-												':cat'=>$data['cat']));
+			$req = $this->query($postgres,array(':nom_film'=>$nomfilm, 
+												':annee_film'=>$anneefilm, 
+												':cat'=>$catfilm));
 		}
 		catch(PDOException $e){
 			echo($e->getMessage());
@@ -70,15 +72,17 @@ class ModelFilm extends Model{
    	
    	/**
    	 *Modifie les informations d'un film
-   	 *@param $data donnee du formulaire
    	 *@param $idfilm id du film a modifier
+	 *@param $newnom nouveau nom du film
+	 *@param $newannee nouvelle annee du film
+	 *@param $newcat nouvelle categorie du film
    	**/
-   	public function editFilm($idfilm, $data){
+   	public function editFilm($idfilm, $newnom, $newannee, $newcat){
    		try{
    			$postgres = 'UPDATE '.$this->table' SET nom_film = :nomfilm , annee_film = :anneefilm, cat_film = :catfilm WHERE '/$this->pk_key.' = :idfilm';
-   			$req = $this->query($postgres,array(":nomfilm"=> $data['nom'],
-   												":anneefilm"=> $data['annee'],
-   												":catfilm"=> $data['cat']));
+   			$req = $this->query($postgres,array(":nomfilm"=> $newnom,
+   												":anneefilm"=> $newannee,
+   												":catfilm"=> $newcat));
    		}
    		catch(PDOException $e){
    			echo($e->getMessage());

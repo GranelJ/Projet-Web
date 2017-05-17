@@ -6,5 +6,6 @@
 
 	<body>
 		<a href="connexion.php">Se connecter</a>
+		<a href="inscription.php">S'inscire</a>
 	</body>
 </html>
