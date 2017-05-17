@@ -27,7 +27,7 @@
 			if($verif_pass[0] == ){
 				echo "Mot de passe incorrect";
 			}else{
-				header("");
+				header("Location: /app/view/listfilmutil.php");
 				//connexion util
 			}
 		}
