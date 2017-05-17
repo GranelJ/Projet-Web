@@ -33,3 +33,10 @@ CREATE TABLE realisateur(
 	prenom_realisateur VARCHAR(50) NOT NULL;
 	CONSTRAINT PK_realisateur PRIMARY KEY (id_realisateur)
 );
+
+CREATE TABLE administrateur(
+	id_administrateur SERIAL;
+	email_admin VARCHAR(50);
+	mdp_admin VARCHAR(50);
+	CONSTRAINT PK_administrateur PRIMARY KEY (id_administrateur)
+);
