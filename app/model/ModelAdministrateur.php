@@ -59,7 +59,7 @@ class ModelAdministrateur extends Model{
    * @param  $mail adresse e-mail de l'admin
    * @return contenant l'administrateur
    **/
-  public function selectByMail($mail){
+  public function selectByMailAdmin($mail){
     try{
       $postgres = 'SELECT * FROM '.$this->table.' WHERE email_admin = :mail';
       $req = $this->query($postgres,array(":mail"=>$mail));

@@ -76,7 +76,7 @@ class ModelUtilisateur extends Model{
    	 *@param $mail adresse email de l'utilisateur
    	 *@return Etudiant concerné par l'email
    	**/
-   	public function selectByMail($mail){
+   	public function selectByMailUtil($mail){
    		try{
    			$postgres = 'SELECT * FROM '.$this->table.' WHERE email_util = :mail';
    			$req = $this->query($postgres,array(":mail"=>$mail));
