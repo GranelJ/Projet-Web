@@ -1,0 +1,12 @@
+{
+    "name": "root/projet-web",
+    "type": "project",
+    "authors": [
+        {
+          "name": "Joris Granel",
+          "email": "joris.granel@etu.umontpellier.fr",
+          "role": "Developer"
+        }
+    ],
+    "require": {}
+}
