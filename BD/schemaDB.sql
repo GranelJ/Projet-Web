@@ -42,4 +42,4 @@ CREATE TABLE administrateur(
 	CONSTRAINT PK_administrateur PRIMARY KEY (id_administrateur)
 );
 
-ALTER TABLE film ADD CONSTRAINT "film_fk" FOREIGN KEY ("cat_film") REFERENCES categorie_film("id_catfilm");
+ALTER TABLE film CONSTRAINT "film_fk" FOREIGN KEY ("cat_film") REFERENCES categorie_film("id_catfilm");
