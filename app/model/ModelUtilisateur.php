@@ -81,7 +81,7 @@ class ModelUtilisateur extends Model{
    			$postgres = 'SELECT * FROM '.$this->table.' WHERE email_util = :mail';
    			$req = $this->query($postgres,array(":mail"=>$mail));
    			$res = $req->fetch(PDO::FETCH_ASSOC);
-   			return $res; 		
+   			return $res;
    		}
    		catch(PDOException $e){
    			echo($e->getMessage());

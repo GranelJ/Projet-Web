@@ -6,6 +6,7 @@
 		$mdp = htmlentities($_POST['mdp'], ENT_QUOTES);
 		$Cmdp = htmlentities($_POST['Cmdp'], ENT_QUOTES);
 		if ($mdp == $Cmdp){
+			$mdp = sha1($mdp);
 			$result = createUtilisateur($email, $mdp);
 		}
 	}
