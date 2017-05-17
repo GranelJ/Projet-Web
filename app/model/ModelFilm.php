@@ -62,10 +62,29 @@ class ModelFilm extends Model{
    		}
    		catch(PDOException $e){
    			echo($e->getMessage());
-   			die("<br> Erreur lors de la supression du film dans la table");
+   			die("<br> Erreur lors de la supression du film dans la table" .^$this->table);
    		}
    	}
    	
+   	/**
+   	 *Modifie les informations d'un film
+   	 *@param $idfilm film a modifier
+   	 *@param $newName nouveau nom du film
+   	 *@param $newCat nouvelle categorie du film
+   	 *@param $newAnnee nouvelle annee du film
+   	**/
+   	public function editFilm($idfilm, $newName, $newCat, $newAnnee){
+   		try{
+   			$postgres = 'UPDATE '.$this->table' SET nom_film = :nomfilm , annee_film = :anneefilm, cat_film = :catfilm WHERE '/$this->pk_key.' = :idfilm';
+   			$req = $this->query($postgres,array(":nomfilm"=> $newName,
+   												":anneefilm"=> $newAnnee,
+   												":catfilm"=> $newCat));
+   		}
+   		catch(PDOException $e){
+   			echo($e->getMessage());
+   			die("<br> Erreur lors de la modifiation du film dans la table" . $this->table);
+   		}
+   	}
 }
 
 

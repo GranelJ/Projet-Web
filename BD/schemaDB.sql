@@ -9,6 +9,7 @@ CREATE TABLE film(
 	id_film SERIAL;
 	nom_film VARCHAR(50) NOT NULL;
 	annee_film INTEGER NOT NULL;
+	cat_film INTEGER NOT NULL;
 	note_film INTEGER ;
 	vu BOOLEAN;
 	CONSTRAINT PK_film PRIMARY KEY (id_film)
@@ -40,3 +41,5 @@ CREATE TABLE administrateur(
 	mdp_admin VARCHAR(50);
 	CONSTRAINT PK_administrateur PRIMARY KEY (id_administrateur)
 );
+
+ALTER TABLE film ADD CONSTRAINT "film_fk" FOREIGN KEY ("cat_film") REFERENCES categorie_film("id_catfilm");
