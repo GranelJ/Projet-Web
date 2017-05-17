@@ -8,6 +8,7 @@
 		if ($mdp == $Cmdp){
 			$mdp = sha1($mdp);
 			$result = createUtilisateur($email, $mdp);
+			echo "Inscription validée";
 		}
 	}
 ?>
