@@ -102,5 +102,21 @@ class ModelAdministrateur extends Model{
             die("<br> Erreur lors de la suppression de l'administrateur dans la table ". $this->table);
         }
     }
+
+    /**
+     *Recupère mdp d'un admin
+     *@param mail de l'admin
+    **/
+    public function getMdpAdmin($mail){
+      try{
+        $postgres = 'DELETE FROM '.$this->table.' WHERE email_admin = :email';
+        $req = $this->query($postgres; array(':email'=>$mail));
+      }
+      catch(PDOException $e)
+      {
+        echo($e->getMessage());
+        die("<br> Erreur lors de la recupération du mot de passe dans la table" . $this->table);
+      }
+    }
 }
 ?>

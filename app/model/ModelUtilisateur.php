@@ -98,11 +98,28 @@ class ModelUtilisateur extends Model{
    			$postgres = 'DELETE FROM '.$this->table.' WHERE '.$this->pk_key.'= :id';
    			$req = $this->query($postgres,array(':id'=>$id));
    		}
-   		catch(PDOException $e){
+   		catch(PDOException $e)
+      {
    			echo($e->getMessage());
    			die("<br> Erreur lors de la supression de l'utilsateur dans la table" . $this->table);
    		}
    	}
+
+    /**
+     *Recupère mdp d'un utilisateur
+     *@param mail de l'utilisateur
+    **/
+    public function getMdpUtil($mail){
+      try{
+        $postgres = 'DELETE FROM '.$this->table.' WHERE email_util = :email';
+        $req = $this->query($postgres; array(':email'=>$mail));
+      }
+      catch(PDOException $e)
+      {
+        echo($e->getMessage());
+        die("<br> Erreur lors de la recupération du mot de passe dans la table" . $this->table);
+      }
+    }
 }
 
 ?>
