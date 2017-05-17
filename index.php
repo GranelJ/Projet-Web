@@ -20,6 +20,6 @@ define('MODEL_PATH', ROOT.'/app/model/');
  */
 define('CONTROLLER_PATH', ROOT.'/app/controller/');
 
-header('Location : https://movies-friend.herokuapp.com/app/view/accueil.php');
+header('Location : app/view/accueil.php');
 exit();
 ?>
