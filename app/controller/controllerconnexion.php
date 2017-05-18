@@ -6,14 +6,14 @@
 	$password = $_POST['mdp'];
 	if(isset($_POST['email']) AND isset($_POST['mdp'])){
 		$verif_email = selectByMailAdmin($email);
-		if($verif_email[0] == ){
+		if(empty($verif_email[0])){
 			$verif_email = selectByMailUtil($email);
-			if($verid_email[0] == ){
+			if(empty($verid_email[0])){
 				echo "Erreur dans l'email. Veuillez vous réauthentifier ou vous inscire";
 			}else{ //login existant
 				$password = sha1($password);
 				$verif_pass = getMdpUtil($email);
-				if ($verif_pass[0] == ){
+				if (empty($verif_pass[0])){
 					echo "Mot de passe incorrect";
 				}else{
 					header("");
@@ -24,7 +24,7 @@
 		}else{
 			$password = sha1($password);
 			$verif_pass = getMdpAdmin($eamil);
-			if($verif_pass[0] == ){
+			if(empty($verif_pass[0])){
 				echo "Mot de passe incorrect";
 			}else{
 				header("Location: /app/view/listfilmutil.php");

@@ -9,6 +9,7 @@
 			$mdp = sha1($mdp);
 			$result = createUtilisateur($email, $mdp);
 			echo "Inscription validée";
+			header('refresh:10;url=/app/view/accueil.php');
 		}
 	}
 ?>
