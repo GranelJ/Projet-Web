@@ -1,5 +1,5 @@
-<?php require("../model/ModelUtilisateur.php");?>
-<?php require("../model/ModelAdministrateur.php");?>
+<?php require_once("../model/ModelUtilisateur.php");?>
+<?php require_once("../model/ModelAdministrateur.php");?>
 
 <?php
 	$email = $_POST['email'];
@@ -21,7 +21,7 @@
 					$id = getIdUtil($email);
 					$token.= sha1($id); //concatene les 2
 					setcookie("info", $token,time()+86400,"/");
-					header("Location: /app/view/listefilmadmin.php");
+					header("Location: /app/view/listefilm.php");
 					//connexion util
 				}
 			}
@@ -37,7 +37,7 @@
 				$id = getIdUtil($email);
 				$token.= sha1($id); //concatene les 2
 				setcookie("info", $token,time()+86400,"/");
-				header("Location: /app/view/listfilmutil.php");
+				header("Location: /app/view/listfilm.php");
 				//connexion admin
 			}
 		}

@@ -6,7 +6,7 @@
 
 	<body>
 		<h1> Modifier les informations </h1>
-		<form> 
+		<form method="POST" action="/app/controllereditfilm.php"> 
 			Nom du film : <br>
 			<input type="text" name="NomFilm"><br>
 			Categorie : <br>

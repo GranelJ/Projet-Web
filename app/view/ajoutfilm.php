@@ -6,7 +6,7 @@
 
 	<body>
 		<h1> Ajouter un film </h1>
-		<form> 
+		<form method="POST" action="/app/controller/controllercreatefilm.php"> 
 			Nom du film : <br>
 			<input type="text" name="NomFilm"><br>
 			Categorie : <br>
@@ -26,7 +26,7 @@
 			<input type="text" name="PActeur"><br>
 
 			<input type="Submit" name="AddFilm">
-			<a href="">Liste des Films</a> <!--Bouton retour-->
+			<a href="/app/view/listefilm.php">Liste des Films</a> <!--Bouton retour-->
 		</form>
 	</body>
 </html>

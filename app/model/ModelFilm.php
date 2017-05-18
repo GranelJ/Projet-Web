@@ -41,13 +41,15 @@ class ModelFilm extends Model{
 	 *@param $anneefilm annee du film
 	 *@param $catfilm categorie du film
 	**/
-	public function createFilm($nomfilm, $anneefilm, $catfilm){
+	public function createFilm($nomfilm, $anneefilm, $catfilm, $realfilm, $acteurfilm){
 		try{
-			$postgres = 'INSERT INTO '.$this->table'(nom_film, annee_film, cat_film)	
-			VALUES(:nom_film, :annee_film, :cat)';
+			$postgres = 'INSERT INTO '.$this->table'(nom_film, annee_film, cat_film, realisateur_film, acteur_film)	
+			VALUES(:nom_film, :annee_film, :cat, :real, :acteur)';
 			$req = $this->query($postgres,array(':nom_film'=>$nomfilm, 
 												':annee_film'=>$anneefilm, 
-												':cat'=>$catfilm));
+												':cat'=>$catfilm,
+                                    ':real'=>$realfilm
+                                    ':acteur'=>$acteurfilm));
 		}
 		catch(PDOException $e){
 			echo($e->getMessage());
@@ -77,12 +79,14 @@ class ModelFilm extends Model{
 	 *@param $newannee nouvelle annee du film
 	 *@param $newcat nouvelle categorie du film
    	**/
-   	public function editFilm($idfilm, $newnom, $newannee, $newcat){
+   	public function editFilm($idfilm, $newnom, $newannee, $newcat, $newreal, $newacteur){
    		try{
-   			$postgres = 'UPDATE '.$this->table' SET nom_film = :nomfilm , annee_film = :anneefilm, cat_film = :catfilm WHERE '/$this->pk_key.' = :idfilm';
+   			$postgres = 'UPDATE '.$this->table' SET nom_film = :nomfilm , annee_film = :anneefilm, cat_film = :catfilm, realisateur_film = :realfilm, acteur_film = :actfilm WHERE '/$this->pk_key.' = :idfilm';
    			$req = $this->query($postgres,array(":nomfilm"=> $newnom,
-   												":anneefilm"=> $newannee,
-   												":catfilm"=> $newcat));
+   												         ":anneefilm"=> $newannee,
+   												         ":catfilm"=> $newcat,
+                                                ":realfilm"=> $newreal,
+                                                ":actfilm"=> $newacteur));
    		}
    		catch(PDOException $e){
    			echo($e->getMessage());

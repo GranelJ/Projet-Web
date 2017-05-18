@@ -1,5 +1,5 @@
 <?php
-	require('../model/ModelUtilisateur.php');
+	require_once('../model/ModelUtilisateur.php');
 
 	if(isset($_POST['email']) AND isset($_POST['mdp']) AND isset($_POST['Cmdp'])){
 		$email = htmlentities($_POST['email'], ENT_QUOTES);
