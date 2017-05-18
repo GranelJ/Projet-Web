@@ -109,13 +109,29 @@ class ModelAdministrateur extends Model{
     **/
     public function getMdpAdmin($mail){
       try{
-        $postgres = 'DELETE FROM '.$this->table.' WHERE email_admin = :email';
+        $postgres = 'SELECT mdp_admin FROM '.$this->table.' WHERE email_admin = :email';
         $req = $this->query($postgres; array(':email'=>$mail));
       }
       catch(PDOException $e)
       {
         echo($e->getMessage());
         die("<br> Erreur lors de la recupération du mot de passe dans la table" . $this->table);
+      }
+    }
+
+    /**
+     *Recupère id d'un administrateur
+     *@param mail de l'administrateur
+    **/
+    public function getIdAdmin($mail){
+      try{
+        $postgres = 'SELECT id_administrateur FROM '.$this->table.' WHERE email_admin = :email';
+        $req = $this->query($postgres; array(':email'=>$mail));
+      }
+      catch(PDOException $e)
+      {
+        echo($e->getMessage());
+        die("<br> Erreur lors de la recupération de l'id dans la table" . $this->table);
       }
     }
 }

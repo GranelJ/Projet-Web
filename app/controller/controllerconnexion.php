@@ -8,29 +8,33 @@
 		$verif_email = selectByMailAdmin($email);
 		if(empty($verif_email[0])){ //Pas present dans table admin
 			$verif_email = selectByMailUtil($email);
-			if(empty($verid_email[0])){
+			if(empty($verid_email[0])){ //Pas present dans table utilisateur
 				echo "Erreur dans l'email. Veuillez vous réauthentifier ou vous inscire";
 			}else{ //login existant
 				$password = sha1($password);
 				$verif_pass = getMdpUtil($email);
-				if (empty($verif_pass[0])){ //Pas present dans table utilisateur
+				if (empty($verif_pass[0])){ //Pas le mot de passe correspondant
 					echo "Mot de passe incorrect";
 				}else{
-
-					header("");
-					//connexion admin
+					$date = date("m.d.y");
+					$token = sha1($date);
+					$id = getIdUtil($email);
+					$token.= sha1($id); //concatene les 2
+					setcookie("info", $token,time()+86400,"/");
+					header("Location: /app/view/listefilmadmin.php");
+					//connexion util
 				}
 			}
 			
 		}else{
 			$password = sha1($password);
 			$verif_pass = getMdpAdmin($email);
-			if(empty($verif_pass[0])){
+			if(empty($verif_pass[0])){ //Pas le mot de passe correspondant
 				echo "Mot de passe incorrect";
 			}else{
-				
+
 				header("Location: /app/view/listfilmutil.php");
-				//connexion util
+				//connexion admin
 			}
 		}
 	}else{

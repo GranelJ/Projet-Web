@@ -111,13 +111,29 @@ class ModelUtilisateur extends Model{
     **/
     public function getMdpUtil($mail){
       try{
-        $postgres = 'DELETE FROM '.$this->table.' WHERE email_util = :email';
+        $postgres = 'SELECT mdp_util FROM '.$this->table.' WHERE email_util = :email';
         $req = $this->query($postgres; array(':email'=>$mail));
       }
       catch(PDOException $e)
       {
         echo($e->getMessage());
         die("<br> Erreur lors de la recupération du mot de passe dans la table" . $this->table);
+      }
+    }
+
+    /**
+     *Recupère id d'un utilisateur
+     *@param mail de l'utilisateur
+    **/
+    public function getIdUtil($mail){
+      try{
+        $postgres = 'SELECT id_utilisateur FROM '.$this->table.' WHERE email_util = :email';
+        $req = $this->query($postgres; array(':email'=>$mail));
+      }
+      catch(PDOException $e)
+      {
+        echo($e->getMessage());
+        die("<br> Erreur lors de la recupération de l'id dans la table" . $this->table);
       }
     }
 }
