@@ -48,8 +48,35 @@ CREATE TABLE administrateur(
 	CONSTRAINT PK_administrateur PRIMARY KEY (id_administrateur)
 );
 
+CREATE TABLE avoir(
+	id_cat INTEGER;
+	id_film INTEGER;
+	CONSTRAINT PK_avoir PRIMARY KEY (id_cat, id_film)
+);
+
+CREATE TABLE realiser(
+	id_film INTEGER;
+	id_realisateur INTEGER;
+	CONSTRAINT PK_realiser PRIMARY KEY (id_film, id_realisateur)
+);
+
+CREATE TABLE jouer(
+	id_film INTEGER;
+	id_acteur INTEGER;
+	CONSTRAINT PK_jouer PRIMARY KEY (id_film, id_acteur)
+);
+
 ALTER TABLE film CONSTRAINT "film_fk1" FOREIGN KEY ("cat_film") REFERENCES categorie_film("id_catfilm");
 ALTER TABLE film CONSTRAINT "film_fk2" FOREIGN KEY ("realisateur_film") REFERENCES realisateur("id_realisateur");
 ALTER TABLE film CONSTRAINT "film_fk3" FOREIGN KEY ("acteur_film") REFERENCES acteur("id_acteur");
 
 ALTER TABLE ajouter CONSTRAINT "ajouter_fk" FOREIGN KEY ("id_film") REFERENCES film("id_film");
+
+ALTER TABLE avoir CONSTRAINT "avoir_fk1" FOREIGN KEY ("id_cat") REFERENCES categorie_film("id_cat");
+ALTER TABLE avoir CONSTRAINT "avoir_fk2" FOREIGN KEY ("id_film") REFERENCES film("id_film");
+
+ALTER TABLE realiser CONSTRAINT "realiser_fk1" FOREIGN KEY ("id_film") REFERENCES film("id_film");
+ALTER TABLE realiser CONSTRAINT "realiser_fk2" FOREIGN KEY ("id_realisateur") REFERENCES realisateur("id_realisateur");
+
+ALTER TABLE jouer CONSTRAINT "jouer_fk1" FOREIGN KEY ("id_film") REFERENCES film("id_film");
+ALTER TABLE jouer CONSTRAINT "jouer_fk2" FOREIGN KEY ("id_acteur") REFERENCES acteur("id_acteur");

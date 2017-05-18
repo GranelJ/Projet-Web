@@ -32,7 +32,11 @@
 			if(empty($verif_pass[0])){ //Pas le mot de passe correspondant
 				echo "Mot de passe incorrect";
 			}else{
-
+				$date = date("m.d.y");
+				$token = sha1($date);
+				$id = getIdUtil($email);
+				$token.= sha1($id); //concatene les 2
+				setcookie("info", $token,time()+86400,"/");
 				header("Location: /app/view/listfilmutil.php");
 				//connexion admin
 			}
