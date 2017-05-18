@@ -5,7 +5,7 @@
 	</head>
 
 	<body>
-		<form method="POST" action="/app/controller/Inscription.php">
+		<form method="POST" action="/app/controller/controllerinscription.php">
 			Email : <br>
 			<input type="text" name="email"><br>
 			Mot de Passe : <br>
