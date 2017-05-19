@@ -2,9 +2,7 @@
 	/**
 	*Class model pour fatoriser la connexion a la bd
 	*/
-class Model{
 	function connexion(){
-		if ($bd == null){
 			//Creation connexion
 			$dbname='d3ii5fodbsca3';
 			$host='ec2-54-228-255-234.eu-west-1.compute.amazonaws.com';
@@ -22,8 +20,6 @@ class Model{
 				echo $e->getMessage();
 				die('<br> Echec lors de la connexion à la BD');
 			}
-		}
 		return $this->bd;
-	}
 }
 ?>

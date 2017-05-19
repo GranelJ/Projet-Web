@@ -6,21 +6,21 @@ require_once("Model.php");
  *Class ModelUtilisateur
 */
 
-class ModelUtilisateur{
     /**
    	 *Retourne les utilisateurs sans leurs mot de passe
    	**/
-   	public function selectAll(){
+   	function selectAll(){
+		global $bd;
    		try{
-   			$postgres = 'SELECT'.$this->pk_key.',email_util FROM '.$this->table;
-   			$req = $this->query($postgres);
-   			$res = $req->fetchAll(PDO::FETCH_ASSOC);
+   			$req = $bd->prepare('SELECT nom_utilisateur,prenom_utilisateur FROM utilisateur');
+   			$req->execute();
+   			$res = $req->fetch();
    			return $res;
    		}
    		catch (PDOException $e)
    		{
    			echo($e->getMessage());
-   			die("<br> Erreur lors de la recherche de tous les objet de la table" . $this->table);
+   			die("<br> Erreur lors de la recherche de tous les objet de la table utilisateur");
    		}
    	}
    	/**
@@ -28,11 +28,10 @@ class ModelUtilisateur{
    	 *@param $email email de l'utilisateur
      *@param $mdp mot de passe de l'utilisateur
    	**/
-   	public static function createUtilisateur($email, $mdp){
+   	function createUtilisateur($email, $mdp){
+		global $bd;
    		try{
-			$bd = Model::connexion();
-   			$req = 'INSERT INTO utilisateur (email_util, mdp_util)
-   			 VALUES(:email_util, :mdp_util)';
+   			$req = 'INSERT INTO utilisateur (email_util, mdp_util) VALUES (:email_util, :mdp_util)';
 			$req->bindParam(':emailutil', $email);
 			$req->bindParam(':mdp_util', $mdp);
    			$req->execute();
@@ -40,7 +39,7 @@ class ModelUtilisateur{
    		catch(PDOException $e)
    		{
    			echo($e->getmessage());
-   			die("<br> Erreur lors de l'ajout d'un étudiant à la table" . $this->table);
+   			die("<br> Erreur lors de l'ajout d'un étudiant à la table utilisateur");
    		}
    	}
    	/**
@@ -48,7 +47,7 @@ class ModelUtilisateur{
    	 *@param $newMdp nouveau mot de passe
    	 *@param $idutilisateur id de l'utilsateur
    	**/
-   	public function editMdpUtilisateur($newMdp, $idutilisateur){
+   	function editMdpUtilisateur($newMdp, $idutilisateur){
    		try{
    			$postgres = 'UPDATE '.$this->table.' SET mdp_util = :newMdp WHERE '.$this->pk_key.' = :idutilisateur';
    			$req = $this->query($postgres,array(':newMdp' => $newMdp,
@@ -66,7 +65,7 @@ class ModelUtilisateur{
    	 *@param $mail adresse email de l'utilisateur
    	 *@return Etudiant concerné par l'email
    	**/
-   	public function selectByMailUtil($mail){
+   	function selectByMailUtil($mail){
    		try{
    			$postgres = 'SELECT * FROM '.$this->table.' WHERE email_util = :mail';
    			$req = $this->query($postgres,array(":mail"=>$mail));
@@ -83,7 +82,7 @@ class ModelUtilisateur{
    	 *Supprimer un utilisateur
    	 *@param $id identifiant de l'utilisateur
    	**/
-   	public function deleteById($id){
+   	function deleteById($id){
    		try{
    			$postgres = 'DELETE FROM '.$this->table.' WHERE '.$this->pk_key.'= :id';
    			$req = $this->query($postgres,array(':id'=>$id));
@@ -99,7 +98,7 @@ class ModelUtilisateur{
      *Recupère mdp d'un utilisateur
      *@param mail de l'utilisateur
     **/
-    public function getMdpUtil($mail){
+    function getMdpUtil($mail){
       try{
         $postgres = 'SELECT mdp_util FROM '.$this->table.' WHERE email_util = :email';
         $req = $this->query($postgres, array(':email'=>$mail));
@@ -115,7 +114,7 @@ class ModelUtilisateur{
      *Recupère id d'un utilisateur
      *@param mail de l'utilisateur
     **/
-    public function getIdUtil($mail){
+    function getIdUtil($mail){
       try{
         $postgres = 'SELECT id_utilisateur FROM '.$this->table.' WHERE email_util = :email';
         $req = $this->query($postgres, array(':email'=>$mail));
@@ -126,6 +125,5 @@ class ModelUtilisateur{
         die("<br> Erreur lors de la recupération de l'id dans la table" . $this->table);
       }
     }
-}
 
 ?>
