@@ -2,10 +2,6 @@
 
 require_once("Model.php");
 
-/**
- *Class ModelUtilisateur
-*/
-
     /**
    	 *Retourne les utilisateurs sans leurs mot de passe
    	**/
@@ -46,10 +42,10 @@ require_once("Model.php");
    	 *@param $idutilisateur id de l'utilsateur
    	**/
    	function editMdpUtilisateur($newMdp, $idutilisateur){
+		global $bd;
    		try{
-   			$postgres = 'UPDATE '.$this->table.' SET mdp_util = :newMdp WHERE '.$this->pk_key.' = :idutilisateur';
-   			$req = $this->query($postgres,array(':newMdp' => $newMdp,
-   												':idutilisateur' => $idutilisateur));
+   			$req = $br->prepare('UPDATE utilisateur SET mdp_util = ? WHERE id_utilisateur = ?');
+   			$req->execute(array($newMdp,$idutilisateur));
    		}
    		catch(PDOException $e)
    		{
@@ -64,11 +60,11 @@ require_once("Model.php");
    	 *@return Etudiant concerné par l'email
    	**/
    	function selectByMailUtil($mail){
+		global $bd;
    		try{
-   			$postgres = 'SELECT * FROM '.$this->table.' WHERE email_util = :mail';
-   			$req = $this->query($postgres,array(":mail"=>$mail));
-   			$res = $req->fetch(PDO::FETCH_ASSOC);
-   			return $res;
+   			$req = $bd->prepare('SELECT * FROM utilisateur WHERE email_util = :mail');
+   			$req->execute(array($mail));
+   			return $req;
    		}
    		catch(PDOException $e){
    			echo($e->getMessage());

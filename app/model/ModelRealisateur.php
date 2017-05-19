@@ -2,55 +2,39 @@
 
 require_once("Model.php");
 
-/**
- *Class ModelRealisateur
-*/
-
-class ModelRealisateur extends Model{
-
-	/**
-     * @var nom de la clé primaire de la table
-     */
-    protected $pk_key = "id_realisateur";
-
-    /**
-     * @var nom de la table
-     */
-    protected $table = "realisateur";
-
     /**
    	 *Retourne les realisateurs
    	**/
-   	public function selectAll(){
+	function selectAll(){
+		global $bd;
    		try{
-   			$postgres = 'SELECT'.$this->pk_key.',nom_realisateur,prenom_realisateur FROM '.$this->table;
-   			$req = $this->query($postgres);
-   			$res = $req->fetchAll(PDO::FETCH_ASSOC);
-   			return $res;
+   			$req = $bd->prepare('SELECT nom_realisateur,prenom_realisateur FROM realisateur');
+   			$req->execute();
+   			return $req;
    		}
    		catch (PDOException $e)
    		{
    			echo($e->getMessage());
-   			die("<br> Erreur lors de la recherche de tous les objet de la table" . $this->table);
+   			die("<br> Erreur lors de la recherche de tous les objet de la table realisateur");
    		}
    	}
 
    	/**
    	 *Creer un realisateur
-   	 *@param $data donnee du formulaire
+   	 *@param $nom nom du realisateur
+	 *@param $prenom prenom du realisateur
    	**/
-   	public function createRealisateur($data){
+	function createRealisateur($nom, $prenom){
+		global $bd;
    		try{
-   			$postgres = 'INSERT INTO '.$this->table.'(nom_realisateur, prenom_realisateur)
-   			 VALUES(:nom_realisateur, :prenom_realisateur)';
-   			$req = $this->querry($postgres, array(
-   											':nom_realisateur' => $data['nom'],
-   											':prenom_realisateur'=> $data['prenom']));
+   			$req = $bd->prepare('INSERT INTO realisateur (nom_realisateur, prenom_realisateur)
+   			 VALUES(?, ?)');
+   			$req->execute(array($nom,$prenom));
    		}
    		catch(PDOException $e)
    		{
    			echo($e->getmessage());
-   			die("<br> Erreur lors de l'ajout d'un realisateur à la table" . $this->table);
+   			die("<br> Erreur lors de l'ajout d'un realisateur à la table realisateur");
    		}
    	}
 
@@ -58,14 +42,15 @@ class ModelRealisateur extends Model{
    	 *Supprimer un realisateur
    	 *@param $id identifiant du realisateur
    	**/
-   	public function deleteById($id){
+	function deleteById($id){
+		global $bd;
    		try{
-   			$postgres = 'DELETE FROM '.$this->table.' WHERE '.$this->pk_key.'= :id';
-   			$req = $this->query($postgres,array(':id'=>$id));
+   			$req = $bd->prepare('DELETE FROM realisateur WHERE id_realisateur= ?');
+   			$req->execute(array($id));
    		}
    		catch(PDOException $e){
    			echo($e->getMessage());
-   			die("<br> Erreur lors de la supression du realisateur dans la table" . $this->table);
+   			die("<br> Erreur lors de la supression du realisateur dans la table realisateur");
    		}
    	}
 
@@ -73,17 +58,18 @@ class ModelRealisateur extends Model{
 	 *Get id d'un realisateur
 	 *@param $nomreal nom du realisateur
 	 *@param $prenomreal prenom du realisateur
+	 *@return $req id du realisateur
 	**/
-	public function getId($nomreal, $prenomreal){
+	function getId($nomreal, $prenomreal){
+		global $bd;
 		try{
-			$postgres = 'DELETE FROM'.$this->table.' WHERE nom_realisateur = :nomreal AND prenom_realisateur = :prenomreal';
-			$req = $this->query($postgres,array(':nomreal'=>$nomreal,
-												':prenomreal'=>$prenomreal));
+			$req = $bd->prepare('DELETE FROM realisateur WHERE nom_realisateur = ? AND prenom_realisateur = ?');
+			$req->execute(array($nomreal,$prenomreal));
+			return($req);
 		}
 		catch(PDOException $e){
 			echo($e->getMessage());
-			die("<br> Erreur lors de la recuperation de l'id dans la table" . $this->table);
+			die("<br> Erreur lors de la recuperation de l'id dans la table realisateur");
 		}
 	}
-}
 ?>

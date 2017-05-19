@@ -2,36 +2,20 @@
 
 require_once("Model.php");
 
-/**
- *Class ModelFilm
-*/
-
-class ModelFilm extends Model{
-
-	/**
-	 *@var nom de la cle primaire de la table
-	**/
-	protected $pk_key ="id_film";
-
-	/**
-	 *@var nom de la table
-	**/
-	protected $table = "film";
-
 	/**
 	 *Retourne tous les films
 	**/
-	public function selectAll(){
+	function selectAll(){
+		global $bd;
 		try{
-		 	$postgres = 'SELECT'.$this->pk_key,.',nom_film,annee_film FROM '.$this->table;
-   			$req = $this->query($postgres);
-   			$res = $req->fetchAll(PDO::FETCH_ASSOC);
-   			return $res;
+		 	$req = $bd->prepare('SELECT nom_film,annee_film FROM film');
+   			$req->execute();
+  			return $req;
 		}
 		catch (PDOException $e)
    		{
    			echo($e->getMessage());
-   			die("<br> Erreur lors de la recherche de tous les objet de la table" . $this->table);
+   			die("<br> Erreur lors de la recherche de tous les objet de la table film");
    		}
 	}
 
@@ -41,19 +25,15 @@ class ModelFilm extends Model{
 	 *@param $anneefilm annee du film
 	 *@param $catfilm categorie du film
 	**/
-	public function createFilm($nomfilm, $anneefilm, $catfilm, $realfilm, $acteurfilm){
+	function createFilm($nomfilm, $anneefilm, $catfilm, $realfilm, $acteurfilm){
+		global $bd;
 		try{
-			$postgres = 'INSERT INTO '.$this->table'(nom_film, annee_film, cat_film, realisateur_film, acteur_film)	
-			VALUES(:nom_film, :annee_film, :cat, :real, :acteur)';
-			$req = $this->query($postgres,array(':nom_film'=>$nomfilm, 
-												':annee_film'=>$anneefilm, 
-												':cat'=>$catfilm,
-                                    ':real'=>$realfilm
-                                    ':acteur'=>$acteurfilm));
+			$req = $bd->execute('INSERT INTO film (nom_film, annee_film, cat_film, realisateur_film, acteur_film) VALUES(?, ?, ?, ?, ?)');
+			$req->execute(array($nomfilm,$anneefilm,$catfilm,$realfilm,$acteurfilm));
 		}
 		catch(PDOException $e){
 			echo($e->getMessage());
-			die("<br> Erreur lors de l'ajout du film à la table" . $this->table);
+			die("<br> Erreur lors de l'ajout du film à la table film");
 		}
 	}
 
@@ -61,14 +41,16 @@ class ModelFilm extends Model{
 	 *Supprime un film
 	 *@param $id id du film
 	**/
-	public function deleteById($id){
+	function deleteById($id){
+		global $bd;
    		try{
-   			$postgres = 'DELETE FROM '.$this->table.' WHERE '.$this->pk_key.'= :id';
-   			$req = $this->query($postgres,array(':id'=>$id));
-   		}
-   		catch(PDOException $e){
+   			$req = $bd->execute('DELETE FROM film WHERE id_film = ?'); 
+   			$req->execute(array($id));
+		   }
+			catch(PDOException $e)
+			{
    			echo($e->getMessage());
-   			die("<br> Erreur lors de la supression du film dans la table" .^$this->table);
+   			die("<br> Erreur lors de la supression du film dans la table film");
    		}
    	}
    	
@@ -79,18 +61,15 @@ class ModelFilm extends Model{
 	 *@param $newannee nouvelle annee du film
 	 *@param $newcat nouvelle categorie du film
    	**/
-   	public function editFilm($idfilm, $newnom, $newannee, $newcat, $newreal, $newacteur){
+	function editFilm($idfilm, $newnom, $newannee, $newcat, $newreal, $newacteur){
+		global $bd;
    		try{
-   			$postgres = 'UPDATE '.$this->table' SET nom_film = :nomfilm , annee_film = :anneefilm, cat_film = :catfilm, realisateur_film = :realfilm, acteur_film = :actfilm WHERE '/$this->pk_key.' = :idfilm';
-   			$req = $this->query($postgres,array(":nomfilm"=> $newnom,
-   												         ":anneefilm"=> $newannee,
-   												         ":catfilm"=> $newcat,
-                                                ":realfilm"=> $newreal,
-                                                ":actfilm"=> $newacteur));
+   			$req = $bd->prepare('UPDATE film SET nom_film = ? , annee_film = ?, cat_film = ?, realisateur_film = ?, acteur_film = ? WHERE id_film = ?');
+   			$req->execute(array($newnom,$newannee,$newcat,$newreal, $newacteur, $idfilm));
    		}
    		catch(PDOException $e){
    			echo($e->getMessage());
-   			die("<br> Erreur lors de la modifiation du film dans la table" . $this->table);
+   			die("<br> Erreur lors de la modifiation du film dans la table film");
    		}
    	}
 
@@ -99,21 +78,16 @@ class ModelFilm extends Model{
    	 *@param $nomfilm nom du film cherche
    	 *@param $anneefilm annee du film cherche
    	**/
-   	public function getIdFilm($nomfilm, $anneefilm){
+	function getIdFilm($nomfilm, $anneefilm){
+		global $bd;
    		try{
-   			$postgres = 'SELECT * FROM'.$this->table' WHERE nom_film = :nom AND anneefilm = :annee';
-   			$req = $this->query($postgres, array(":nom"=>$nomfilm),
-   												 ":annee"=>$anneefilm));
-   			$res = $req->fetch(PDO::FETCH_ASSOC);
-   			return $res; 
+   			$req = $bd->execute('SELECT id_film FROM film WHERE nom_film = ? AND anneefilm =?');
+			$req->execute(array($nom ,$annefilm));
+   			return $req; 
    		}
    		catch(PDOException $e)
    		{
-   			echo($e->getMessage());
-   			die("<br> Erreur lors de la récupération de l'id du film dans la table" . $this->table);
-   		}
-   	}
-}
-
-
-?>
+   		cho($e->getMessage());
+   		die("Erreur lors de la récupération de l'id dans la table film");
+		}
+	}

@@ -2,38 +2,38 @@
 
 require_once("Model.php");
 
-class ModelActeur{
-   	public static function selectAll(){
-		   $bd = Model::connexion();
+    /**
+   	 *Retourne les acteurs
+   	**/
+   	function selectAll(){
+		global $bd;
    		try{
-   			$req = $bd->prepare('SELECT * FROM acteur');
+   			$req = $bd->prepare('SELECT nom_acteur, prenom_acteur FROM acteur');
    			$req->execute();
-   			$res = $req->fetch();
-   			return $res;
+   			return $req;
    		}
    		catch (PDOException $e)
    		{
    			echo($e->getMessage());
-   			die("<br> Erreur lors de la recherche de tous les objet de la table" . $this->table);
+   			die("<br> Erreur lors de la recherche de tous les objet de la table acteur");
    		}
    	}
 
    	/**
    	 *Creer un acteur
-   	 *@param $data donnee du formulaire
+   	 *@param $nom nom de l'acteur
+	 *@param $prenom prenom de l'acteur
    	**/
-   	public function createActeur($data){
-   		try{
-   			$postgres = 'INSERT INTO '.$this->table.'nom_acteur, prenom_acteur)
-   			 VALUES(:prenom_acteur, :nom_acteur)';
-   			$req = $this->querry($postgres, array(
-   											':enom_acteur' => $data['nom'],
-   											':prenom_acteur'=> $data['prenom']));
+   	function createActeur($nom,$prenom){
+   		global $bd;
+		try{
+   			$req = $bd->prepare('INSERT INTO acteur (nom_acteur, prenom_acteur) VALUES (?,?)');
+   			$req->execute(array($nom,$prenom));
    		}
    		catch(PDOException $e)
    		{
    			echo($e->getmessage());
-   			die("<br> Erreur lors de l'ajout d'un acteur à la table" . $this->table);
+   			die("<br> Erreur lors de l'ajout d'un acteur à la table acteur");
    		}
    	}
 
@@ -41,14 +41,15 @@ class ModelActeur{
    	 *Supprimer un acteur
    	 *@param $id identifiant de l'acteur
    	**/
-   	public function deleteById($id){
+   	function deleteById($id){
+		global $bd;
    		try{
-   			$postgres = 'DELETE FROM '.$this->table.' WHERE '.$this->pk_key.'= :id';
-   			$req = $this->query($postgres,array(':id'=>$id));
+   			$req = $bd->prepare('DELETE FROM acteur WHERE id_acteur = ?');
+   			$req->execute(array($id));
    		}
    		catch(PDOException $e){
    			echo($e->getMessage());
-   			die("<br> Erreur lors de la supression de l'acteur dans la table" . $this->table);
+   			die("<br> Erreur lors de la supression de l'acteur dans la table acteur");
    		}
    	}
 	/**
@@ -56,16 +57,16 @@ class ModelActeur{
 	 *@param $nomact nom de l'acteur
 	 *@param $prenomact prenom de l'acteur
 	**/
-	public function getId($nomact, $prenomact){
+	function getId($nomact, $prenomact){
+		global $bd;
 		try{
-			$postgres = 'DELETE FROM'.$this->table.' WHERE nom_acteur = :nomact AND prenom_acteur = :prenomact';
-			$req = $this->query($postgres,array(':nomact'=>$nomact,
-												':prenomact'=>$prenomact));
+			$req = $bd->prepare('DELETE FROM acteur WHERE nom_acteur = ? AND prenom_acteur = ?');
+			$req->execute(array($nomact,$prenomact));
+			return($req);
 		}
 		catch(PDOException $e){
 			echo($e->getMessage());
-			die("<br> Erreur lors de la recuperation de l'id dans la table" . $this->table);
+			die("<br> Erreur lors de la recuperation de l'id dans la table acteur");
 		}
 	}
-}
 ?>

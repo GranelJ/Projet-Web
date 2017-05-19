@@ -2,73 +2,56 @@
 
 require_once("Model.php");
 
-/**
- * Class ModelAdministrateur
- */
-class ModelAdministrateur extends Model{
-
-    /**
-     * @var nom de la clé primaire de la table
-     */
-  protected $pk_key = "id_administrateur";
-
-
-    /**
-     * @var nom de la table
-     */
-  protected $table  = "administrateur";
-
   /**
    * Selectionner tous les administrateurs de la table sauf soit même
-   * @param $idAdmin identifiant de l'administrateur
    * @return La liste ne contient pas l'id de l'administrateur passé en paramètres
    */
-  public function selectAll($idAdmin){
+  function selectAll($idAdmin){
+      global $bd;
       try{
-          $postgres = 'SELECT '.$this->pk_key.',email_admin FROM '.$this->table.' WHERE '.$this->pk_key.' != '.$idAdmin;
-          $req = $this->query($postgres);
-          $res = $req->fetchAll(PDO::FETCH_ASSOC);
-          return $res;
+          $req = $bd->prepare('SELECT email_admin FROM administrateur');
+          $req->execute();
+          return $req;
       }
       catch (PDOException $e)
       {
           echo($e->getMessage());
-          die("<br> Erreur lors de la recherche de tous les objets de la table " . $this->table);
+          die("<br> Erreur lors de la recherche de tous les objets de la table administrateur");
       }
   }
 
   /**
   * Créer un compte administrateur
-  * @param $data tableau associatif contenant le nom, prenom, mail et mdp crypté à insérer
-  */
-  public function createAdministrateur($data){
+  * @param $email de l'admin
+  * @param $mdp de l'admin
+  **/
+  function createAdministrateur($email,$mdp){
+    global $bd;
     try{
-      $postgres = 'INSERT INTO '.$this->table.' (email_admin, mdp_admin) VALUES(:email, :mdp)';
-
-      $req = $this->query($sql,array(
-                              ':email'=> $data['mail'],
-                              ':mdp' => $data['mdp']));
+      $req = $bd->prepare('INSERT INTO administrateur (email_admin, mdp_admin) VALUES(?, ?)');
+      $req->execute(array($mail,$mdp));
     }
     catch(PDOException $e){
       echo($e->getMessage());
-      die("<br> Erreur lors de l'ajout d'un administrateur à la table " . $this->table);
+      die("<br> Erreur lors de l'ajout d'un administrateur à la table administrateur");
     }
   }
   /**
-   * Selectionner un administrateur par son mail
+   * Récupère l'id d'un administrateur par son mail
    * @param  $mail adresse e-mail de l'admin
-   * @return contenant l'administrateur
+   * @return id de l'administrateur
    **/
-  public function selectByMailAdmin($mail){
+  function getIdAdmin($mail){
+    global $bd;
     try{
-      $postgres = 'SELECT * FROM '.$this->table.' WHERE email_admin = :mail';
-      $req = $this->query($postgres,array(":mail"=>$mail));
-      $res = $req->fetch(PDO::FETCH_ASSOC);
-      return $res;
+      $req = $bd->prepare('SELECT id_administrateur FROM administrateur WHERE email_admin = ?');
+      $req->execute(array($mail));
+      return $req;
     }
-    catch(PDOException $e){
+    catch(PDOException $e)
+    {
       echo($e->getMessage());
-      die("<br> Erreur lors de la selection de l'administrateur dans la table " . $this->table);
+      die("<br> Erreur lors de la selection de l'administrateur dans la table administrateur");
     }
   }
 
@@ -77,29 +60,32 @@ class ModelAdministrateur extends Model{
   * @param  $newMdp nouveau mot de passe
   * @param  $idAdministrateur id de l'administrateur
   **/
-  public function editMdpAdmin($newMdp, $idAdministrateur){
+  function editMdpAdmin($newMdp, $idAdministrateur){
+    global $bd;
     try{
-      $postgres = 'UPDATE '.$this->table.' SET mdp_admin = :newMdp WHERE '.$this->pk_key.' = :id_administrateur';
-      $req = $this->query($postgres,array(':newMdp' => $newMdp,
-                                     ':id_administrateur' => $idAdministrateur));
+      $req = $bd->prepare('UPDATE administrateur SET mdp_admin = ? WHERE id_administrateur = ?');
+      $req->execute(array($newMdp,$idAdministrateur));
     }
-    catch(PDOException $e){
+    catch(PDOException $e)
+    {
       echo($e->getMessage());
-      die("<br> Erreur lors de la modification du mot de passe dans la table " . $this->table);
+      die("<br> Erreur lors de la modification du mot de passe dans la table administrateur");
     }
   }
     /**
      * Supprimer un administrateur
      * @param int $id identifiant de l'administrateur
      **/
-    public function deleteById($id){
+    function deleteById($id){
+        global $bd;
         try{
-            $postgres = 'DELETE FROM '.$this->table.' WHERE '.$this->pk_key.'= :id';
-            $req = $this->query($postgres,array(':id'=>$id));
+            $req = $bd->prepare('DELETE FROM administrateur WHERE id_administrateur=?');
+            $req->execute(array($id));
         }
-        catch(PDOException $e){
+        catch(PDOException $e)
+        {
             echo($e->getMessage());
-            die("<br> Erreur lors de la suppression de l'administrateur dans la table ". $this->table);
+            die("<br> Erreur lors de la suppression de l'administrateur dans la table administrateur");
         }
     }
 
@@ -107,32 +93,16 @@ class ModelAdministrateur extends Model{
      *Recupère mdp d'un admin
      *@param mail de l'admin
     **/
-    public function getMdpAdmin($mail){
+    function getMdpAdmin($mail){
+      global $bd;
       try{
-        $postgres = 'SELECT mdp_admin FROM '.$this->table.' WHERE email_admin = :email';
-        $req = $this->query($postgres; array(':email'=>$mail));
+        $req = $bd->prepare('SELECT mdp_admin FROM administrateur WHERE email_admin = ?');
+        $req->execute(array($mail));
       }
       catch(PDOException $e)
       {
         echo($e->getMessage());
-        die("<br> Erreur lors de la recupération du mot de passe dans la table" . $this->table);
+        die("<br> Erreur lors de la recupération du mot de passe dans la table administrateur");
       }
     }
-
-    /**
-     *Recupère id d'un administrateur
-     *@param mail de l'administrateur
-    **/
-    public function getIdAdmin($mail){
-      try{
-        $postgres = 'SELECT id_administrateur FROM '.$this->table.' WHERE email_admin = :email';
-        $req = $this->query($postgres; array(':email'=>$mail));
-      }
-      catch(PDOException $e)
-      {
-        echo($e->getMessage());
-        die("<br> Erreur lors de la recupération de l'id dans la table" . $this->table);
-      }
-    }
-}
 ?>
