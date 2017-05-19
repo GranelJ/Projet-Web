@@ -31,10 +31,8 @@ require_once("Model.php");
    	function createUtilisateur($email, $mdp){
 		global $bd;
    		try{
-   			$req = 'INSERT INTO utilisateur (email_util, mdp_util) VALUES (:email_util, :mdp_util)';
-			$req->bindParam(':emailutil', $email);
-			$req->bindParam(':mdp_util', $mdp);
-   			$req->execute();
+   			$req = $bd->prepare('INSERT INTO utilisateur (email_util, mdp_util) VALUES (?,?)');
+   			$req->execute(array($email,$mdp));
    		}
    		catch(PDOException $e)
    		{
