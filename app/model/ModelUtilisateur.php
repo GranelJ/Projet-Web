@@ -23,7 +23,7 @@ class ModelUtilisateur extends Model{
    	**/
    	public function selectAll(){
    		try{
-   			$postgres = 'SELECT'.$this->pk_key,.',email_util FROM '.$this->table;
+   			$postgres = 'SELECT'.$this->pk_key.',email_util FROM '.$this->table;
    			$req = $this->query($postgres);
    			$res = $req->fetchAll(PDO::FETCH_ASSOC);
    			return $res;
@@ -112,7 +112,7 @@ class ModelUtilisateur extends Model{
     public function getMdpUtil($mail){
       try{
         $postgres = 'SELECT mdp_util FROM '.$this->table.' WHERE email_util = :email';
-        $req = $this->query($postgres; array(':email'=>$mail));
+        $req = $this->query($postgres, array(':email'=>$mail));
       }
       catch(PDOException $e)
       {
@@ -128,7 +128,7 @@ class ModelUtilisateur extends Model{
     public function getIdUtil($mail){
       try{
         $postgres = 'SELECT id_utilisateur FROM '.$this->table.' WHERE email_util = :email';
-        $req = $this->query($postgres; array(':email'=>$mail));
+        $req = $this->query($postgres, array(':email'=>$mail));
       }
       catch(PDOException $e)
       {
