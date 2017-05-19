@@ -6,18 +6,7 @@ require_once("Model.php");
  *Class ModelUtilisateur
 */
 
-class ModelUtilisateur extends Model{
-
-    /**
-     * @var nom de la clé primaire de la table
-     */
-    protected $pk_key = "id_utilisateur";
-
-    /**
-     * @var nom de la table
-     */
-    protected $table = "utilisateur";
-
+class ModelUtilisateur{
     /**
    	 *Retourne les utilisateurs sans leurs mot de passe
    	**/
@@ -37,15 +26,16 @@ class ModelUtilisateur extends Model{
    	/**
    	 *Creer un utilisateur
    	 *@param $email email de l'utilisateur
-       *@param $mdp mot de passe de l'utilisateur
+     *@param $mdp mot de passe de l'utilisateur
    	**/
-   	public function createUtilisateur($email, $mdp){
+   	public static function createUtilisateur($email, $mdp){
    		try{
-   			$postgres = 'INSERT INTO '.$this->table.'(email_util, mdp_util)
+			$bd = Model::connexion();
+   			$req = 'INSERT INTO utilisateur (email_util, mdp_util)
    			 VALUES(:email_util, :mdp_util)';
-   			$req = $this->querry($postgres, array(
-   											':email_util' => $email,
-   											':mdp_util'=> $mdp));
+			$req->bindParam(':emailutil', $email);
+			$req->bindParam(':mdp_util', $mdp);
+   			$req->execute();
    		}
    		catch(PDOException $e)
    		{

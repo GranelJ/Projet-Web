@@ -2,30 +2,13 @@
 
 require_once("Model.php");
 
-/**
- *Class ModelActeur
-*/
-
-class ModelActeur extends Model{
-
-	/**
-     * @var nom de la clé primaire de la table
-     */
-    protected $pk_key = "id_acteur";
-
-    /**
-     * @var nom de la table
-     */
-    protected $table = "acteur";
-
-    /**
-   	 *Retourne les acteurs
-   	**/
-   	public function selectAll(){
+class ModelActeur{
+   	public static function selectAll(){
+		   $bd = Model::connexion();
    		try{
-   			$postgres = 'SELECT'.$this->pk_key.',nom_acteur,prenom_acteur FROM '.$this->table;
-   			$req = $this->query($postgres);
-   			$res = $req->fetchAll(PDO::FETCH_ASSOC);
+   			$req = $bd->prepare('SELECT * FROM acteur');
+   			$req->execute();
+   			$res = $req->fetch();
    			return $res;
    		}
    		catch (PDOException $e)
