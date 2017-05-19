@@ -68,5 +68,22 @@ class ModelRealisateur extends Model{
    			die("<br> Erreur lors de la supression du realisateur dans la table" . $this->table);
    		}
    	}
+
+	/**
+	 *Get id d'un realisateur
+	 *@param $nomreal nom du realisateur
+	 *@param $prenomreal prenom du realisateur
+	**/
+	public function getId($nomreal, $prenomreal){
+		try{
+			$postgres = 'DELETE FROM'.$this->table.' WHERE nom_realisateur = :nomreal AND prenom_realisateur = :prenomreal';
+			$req = $this->query($postgres,array(':nomreal'=>$nomreal
+												':prenomreal'=>$prenomreal));
+		}
+		catch(PDOException $e){
+			echo($e->getMessage());
+			die("<br> Erreur lors de la recuperation de l'id dans la table" . $this->table);
+		}
+	}
 }
 ?>

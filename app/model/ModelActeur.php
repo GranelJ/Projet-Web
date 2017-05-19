@@ -68,5 +68,21 @@ class ModelActeur extends Model{
    			die("<br> Erreur lors de la supression de l'acteur dans la table" . $this->table);
    		}
    	}
+	/**
+	 *Get id d'un acteur
+	 *@param $nomact nom de l'acteur
+	 *@param $prenomact prenom de l'acteur
+	**/
+	public function getId($nomact, $prenomact){
+		try{
+			$postgres = 'DELETE FROM'.$this->table.' WHERE nom_acteur = :nomact AND prenom_acteur = :prenomact';
+			$req = $this->query($postgres,array(':nomact'=>$nomact
+												':prenomact'=>$prenomact));
+		}
+		catch(PDOException $e){
+			echo($e->getMessage());
+			die("<br> Erreur lors de la recuperation de l'id dans la table" . $this->table);
+		}
+	}
 }
 ?>
