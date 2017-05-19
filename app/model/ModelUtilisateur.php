@@ -5,7 +5,7 @@ require_once("Model.php");
     /**
    	 *Retourne les utilisateurs sans leurs mot de passe
    	**/
-   	function selectAll(){
+   	function selectAllUtil(){
 		global $bd;
    		try{
    			$req = $bd->prepare('SELECT nom_utilisateur,prenom_utilisateur FROM utilisateur');
@@ -76,7 +76,7 @@ require_once("Model.php");
    	 *Supprimer un utilisateur
    	 *@param $id identifiant de l'utilisateur
    	**/
-   	function deleteById($id){
+   	function deleteByIdUtil($id){
    		try{
    			$postgres = 'DELETE FROM '.$this->table.' WHERE '.$this->pk_key.'= :id';
    			$req = $this->query($postgres,array(':id'=>$id));

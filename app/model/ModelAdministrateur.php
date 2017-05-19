@@ -6,7 +6,7 @@ require_once("Model.php");
    * Selectionner tous les administrateurs de la table sauf soit même
    * @return La liste ne contient pas l'id de l'administrateur passé en paramètres
    */
-  function selectAll($idAdmin){
+  function selectAllAdmin($idAdmin){
       global $bd;
       try{
           $req = $bd->prepare('SELECT email_admin FROM administrateur');
@@ -76,7 +76,7 @@ require_once("Model.php");
      * Supprimer un administrateur
      * @param int $id identifiant de l'administrateur
      **/
-    function deleteById($id){
+    function deleteByIdAdmin($id){
         global $bd;
         try{
             $req = $bd->prepare('DELETE FROM administrateur WHERE id_administrateur=?');
