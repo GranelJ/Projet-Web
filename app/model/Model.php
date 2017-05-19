@@ -3,7 +3,7 @@
 	*Class model pour fatoriser la connexion a la bd
 	*/
 class Model{
-	protected function connexion(){
+	function connexion(){
 		if ($bd == null){
 			//Creation connexion
 			$dbname='d3ii5fodbsca3';
