@@ -1,0 +1,10 @@
+INSERT INTO categorie_film (lib_cat) VALUES ('Action');
+INSERT INTO categorie_film (lib_cat) VALUES ('Action');
+INSERT INTO categorie_film (lib_cat) VALUES ('Action');
+INSERT INTO categorie_film (lib_cat) VALUES ('Action');
+INSERT INTO categorie_film (lib_cat) VALUES ('Action');
+INSERT INTO categorie_film (lib_cat) VALUES ('Action');
+INSERT INTO categorie_film (lib_cat) VALUES ('Action');
+INSERT INTO categorie_film (lib_cat) VALUES ('Action');
+INSERT INTO categorie_film (lib_cat) VALUES ('Action');
+INSERT INTO categorie_film (lib_cat) VALUES ('Action');
