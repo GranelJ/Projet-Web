@@ -64,7 +64,8 @@ require_once("Model.php");
    		try{
    			$req = $bd->prepare('SELECT * FROM utilisateur WHERE email_util = :mail');
    			$req->execute(array($mail));
-   			return $req;
+				$res = $req->fetch();
+   			return $res[0];
    		}
    		catch(PDOException $e){
    			echo($e->getMessage());
