@@ -23,7 +23,7 @@ class ModelActeur extends Model{
    	**/
    	public function selectAll(){
    		try{
-   			$postgres = 'SELECT'.$this->pk_key,.',nom_acteur,prenom_acteur FROM '.$this->table;
+   			$postgres = 'SELECT'.$this->pk_key.',nom_acteur,prenom_acteur FROM '.$this->table;
    			$req = $this->query($postgres);
    			$res = $req->fetchAll(PDO::FETCH_ASSOC);
    			return $res;
