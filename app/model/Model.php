@@ -1,6 +1,6 @@
 <?php
 			//Creation connexion
-			$dbname='d3ii5fodbsca3';
+			$dbname='d3ii5fodbsca3d';
 			$host='ec2-54-228-255-234.eu-west-1.compute.amazonaws.com';
 			$dbuser='nyjmohehyilnvw';
 			$dbpass='963ae619d9edfe5580cf7278f372d5204dc59edd4c0e6209d59e91650be73495';
