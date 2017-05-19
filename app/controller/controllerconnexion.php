@@ -42,6 +42,6 @@
 			}
 		}
 	}else{
-		header('Location: /app/view/connexion.php')
+		header('Location: /app/view/connexion.php');
 	}
 ?>
