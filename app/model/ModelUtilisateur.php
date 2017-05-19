@@ -78,9 +78,10 @@ require_once("Model.php");
    	 *@param $id identifiant de l'utilisateur
    	**/
    	function deleteByIdUtil($id){
+			global $bd;
    		try{
-   			$postgres = 'DELETE FROM '.$this->table.' WHERE '.$this->pk_key.'= :id';
-   			$req = $this->query($postgres,array(':id'=>$id));
+   			$req = $bd->prepare('DELETE FROM utilisateur WHERE id_utilisateur = ?');
+   			$req->execute(array($id));
    		}
    		catch(PDOException $e)
       {
@@ -94,10 +95,12 @@ require_once("Model.php");
      *@param mail de l'utilisateur
     **/
     function getMdpUtil($mail){
+			global $bd;
       try{
-        $postgres = 'SELECT mdp_util FROM '.$this->table.' WHERE email_util = :email';
-        $req = $this->query($postgres, array(':email'=>$mail));
-				return($req);
+        $req = $bd->prepare('SELECT mdp_util FROM utilisateur WHERE email_util = ?');
+        $req->execute(array($mail));
+				$res = $req->fetch();
+				return $res[0];
       }
       catch(PDOException $e)
       {
