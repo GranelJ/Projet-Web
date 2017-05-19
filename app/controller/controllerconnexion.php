@@ -8,7 +8,7 @@
 		$verif_email = getIdAdmin($email);
 		if(empty($verif_email)){ //Pas present dans table admin
 			$verif_email = getIdUtil($email);
-			if(empty($verid_email)){ //Pas present dans table utilisateur
+			if(empty($verif_email)){ //Pas present dans table utilisateur
 				echo "Erreur dans l'email. Veuillez vous réauthentifier ou vous inscire";
 			}else{ //login existant
 				$password = sha1($password);
