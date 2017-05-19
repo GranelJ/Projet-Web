@@ -96,6 +96,7 @@ require_once("Model.php");
       try{
         $postgres = 'SELECT mdp_util FROM '.$this->table.' WHERE email_util = :email';
         $req = $this->query($postgres, array(':email'=>$mail));
+				return($req);
       }
       catch(PDOException $e)
       {

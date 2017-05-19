@@ -98,6 +98,7 @@ require_once("Model.php");
       try{
         $req = $bd->prepare('SELECT mdp_admin FROM administrateur WHERE email_admin = ?');
         $req->execute(array($mail));
+        return($req);
       }
       catch(PDOException $e)
       {

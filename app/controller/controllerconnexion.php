@@ -13,8 +13,8 @@
 			}else{ //login existant
 				$password = sha1($password);
 				$verif_pass = getMdpUtil($email);
-				if (empty($verif_pass)){ //Pas le mot de passe correspondant
-					echo "Mot de passe incorrect";
+				if ($verif_pass != $password){ //Pas le mot de passe correspondant
+					echo "Mot de passe utilisateur incorrect";
 				}else{
 					$date = date("m.d.y");
 					$token = sha1($date);
@@ -29,8 +29,8 @@
 		}else{
 			$password = sha1($password);
 			$verif_pass = getMdpAdmin($email);
-			if(empty($verif_pass[0])){ //Pas le mot de passe correspondant
-				echo "Mot de passe incorrect";
+			if($verif_pass!=$password){ //Pas le mot de passe correspondant
+				echo "Mot de passe administrateur incorrect";
 			}else{
 				$date = date("m.d.y");
 				$token = sha1($date);
