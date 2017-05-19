@@ -76,7 +76,7 @@ class ModelActeur extends Model{
 	public function getId($nomact, $prenomact){
 		try{
 			$postgres = 'DELETE FROM'.$this->table.' WHERE nom_acteur = :nomact AND prenom_acteur = :prenomact';
-			$req = $this->query($postgres,array(':nomact'=>$nomact
+			$req = $this->query($postgres,array(':nomact'=>$nomact,
 												':prenomact'=>$prenomact));
 		}
 		catch(PDOException $e){

@@ -77,7 +77,7 @@ class ModelRealisateur extends Model{
 	public function getId($nomreal, $prenomreal){
 		try{
 			$postgres = 'DELETE FROM'.$this->table.' WHERE nom_realisateur = :nomreal AND prenom_realisateur = :prenomreal';
-			$req = $this->query($postgres,array(':nomreal'=>$nomreal
+			$req = $this->query($postgres,array(':nomreal'=>$nomreal,
 												':prenomreal'=>$prenomreal));
 		}
 		catch(PDOException $e){
