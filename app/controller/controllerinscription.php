@@ -7,7 +7,7 @@
 		$Cmdp = htmlentities($_POST['Cmdp'], ENT_QUOTES);
 		if ($mdp == $Cmdp){
 			$mdp = sha1($mdp);
-			$result = createUtilisateur($email, $mdp);
+			$result = ModelUtilisateur::createUtilisateur($email, $mdp);
 			echo "Inscription validée";
 			header('refresh:3;url=/app/view/accueil.php');
 		}
