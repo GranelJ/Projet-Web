@@ -7,7 +7,7 @@
 		$Cmdp = htmlspecialchars($_POST['Cmdp']);
 		if ($mdp == $Cmdp){
 			$mdp = sha1($mdp);
-			$result = ModelUtilisateur::createUtilisateur($email, $mdp);
+			createUtilisateur($email, $mdp);
 			echo "Inscription validée";
 			header('refresh:3;url=/app/view/accueil.php');
 		}
