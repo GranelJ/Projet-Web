@@ -13,13 +13,11 @@
 			{
 				$bd = new PDO("pgsql:host=$host;dbname=$dbname;charset=utf", $dbuser, $dbpass);
 				$bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-				return $bd;
 			}
 			catch (PDOException $e)
 			{
 				echo $e->getMessage();
 				die('<br> Echec lors de la connexion à la BD');
 			}
-		return $this->bd;
 }
 ?>
