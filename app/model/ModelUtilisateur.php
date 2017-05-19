@@ -59,7 +59,7 @@ require_once("Model.php");
    	 *@param $mail adresse email de l'utilisateur
    	 *@return Etudiant concerné par l'email
    	**/
-   	function selectByMailUtil($mail){
+   	function getIdUtil($mail){
 		global $bd;
    		try{
    			$req = $bd->prepare('SELECT * FROM utilisateur WHERE email_util = :mail');
@@ -101,22 +101,6 @@ require_once("Model.php");
       {
         echo($e->getMessage());
         die("<br> Erreur lors de la recupération du mot de passe dans la table" . $this->table);
-      }
-    }
-
-    /**
-     *Recupère id d'un utilisateur
-     *@param mail de l'utilisateur
-    **/
-    function getIdUtil($mail){
-      try{
-        $postgres = 'SELECT id_utilisateur FROM '.$this->table.' WHERE email_util = :email';
-        $req = $this->query($postgres, array(':email'=>$mail));
-      }
-      catch(PDOException $e)
-      {
-        echo($e->getMessage());
-        die("<br> Erreur lors de la recupération de l'id dans la table" . $this->table);
       }
     }
 
