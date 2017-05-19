@@ -1,8 +1,4 @@
 <?php
-	/**
-	*Class model pour fatoriser la connexion a la bd
-	*/
-	function connexion(){
 			//Creation connexion
 			$dbname='d3ii5fodbsca3';
 			$host='ec2-54-228-255-234.eu-west-1.compute.amazonaws.com';
@@ -11,7 +7,7 @@
 
 			try
 			{
-				$bd = new PDO("pgsql:host=$host;dbname=$dbname;charset=utf", $dbuser, $dbpass);
+				$bd = new PDO("pgsql:host=$host;dbname=$dbname", $dbuser, $dbpass);
 				$bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			}
 			catch (PDOException $e)
@@ -19,5 +15,4 @@
 				echo $e->getMessage();
 				die('<br> Echec lors de la connexion à la BD');
 			}
-}
 ?>
