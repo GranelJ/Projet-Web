@@ -12,6 +12,7 @@
 			header('refresh:3;url=/app/view/accueil.php');
 		}else{
 			echo "Erreur lors de la vérification du mot de passe";
+			header("Location: /app/view/inscription.php")
 		}
 	}
 ?>
