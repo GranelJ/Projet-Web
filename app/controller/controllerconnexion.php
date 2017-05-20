@@ -41,7 +41,7 @@
 				$token.= sha1($id); //concatene les 2
 				setcookie("info", $token,time()+86400,"/");
 				setcookie("droit", $droit,time()+86400,"/");
-				header("Location: /app/view/listfilm.php");
+				header("Location: /app/view/listefilm.php");
 				//connexion admin
 			}
 		}
