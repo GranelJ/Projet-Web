@@ -2,9 +2,7 @@
 <?php require_once("../model/ModelAdministrateur.php");?>
 
 <?php
-	if(!null == $_COOKIE["droit"] AND !null == $_COOKIE["info"]){
-		header("Location: /app/view/listefilm.php"); //si cookies valables redirige vers la liste des films
-	}
+	
 	$email = $_POST['email'];
 	$password = $_POST['mdp'];
 	if(isset($_POST['email']) AND isset($_POST['mdp'])){
