@@ -27,6 +27,6 @@
 
 			<input type="Submit" name="ModifFilm">
 		</form>
-		<a href="">Liste des Films</a> <!--Bouton retour-->
+		<a href="/app/view/listefilm.php">Liste des Films</a> <!--Bouton retour-->
 	</body>
 </html>

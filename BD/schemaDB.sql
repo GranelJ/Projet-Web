@@ -63,16 +63,6 @@ CREATE TABLE ajouter(
 	CONSTRAINT "ajouter_fk2" FOREIGN KEY ("id_utilisateur") REFERENCES utilisateur("id_utilisateur")
 );
 
-CREATE TABLE rajouter(
-	note_film INTEGER,
-	vu BOOLEAN,
-	id_film INTEGER,
-	id_administrateur INTEGER,
-	CONSTRAINT PK_rajouter PRIMARY KEY (id_film, id_administrateur),
-	CONSTRAINT "rajouter_fk1" FOREIGN KEY ("id_administrateur") REFERENCES administrateur("id_administrateur"),
-	CONSTRAINT "rajouter_fk2" FOREIGN KEY ("id_film") REFERENCES film("id_film")
-);
-
 CREATE TABLE avoir(
 	id_cat INTEGER,
 	id_film INTEGER,
