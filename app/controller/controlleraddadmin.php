@@ -8,7 +8,7 @@
 			$mdp = sha1($mdp);
 			createAdministrateur($email, $mdp);
 			echo "Administrateur ajouté";
-		    header('refresh:3;url=/app/view/listefilm.php');
+		    header('refresh:3;url=/app/view/dashboardadmin.php');
 			}else{
 				echo"Cet email est déjà utilisé";
 				header("refresh:2;url=/app/view/addadmin.php");
