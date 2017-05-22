@@ -26,7 +26,7 @@
 			<input type="text" name="PActeur"><br>
 
 			<input type="Submit" name="AddFilm">
-			<a href="/app/view/listefilm.php">Retour</a> <!--Bouton retour-->
 		</form>
+		<a href="/app/view/listefilm.php">Retour</a> <!--Bouton retour-->
 	</body>
 </html>
