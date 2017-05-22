@@ -63,7 +63,8 @@ require_once("Model.php");
 		try{
 			$req = $bd->prepare('DELETE FROM acteur WHERE nom_acteur = ? AND prenom_acteur = ?');
 			$req->execute(array($nomact,$prenomact));
-			return($req);
+			$res=$req->fetch();
+			return($res[0]);
 		}
 		catch(PDOException $e){
 			echo($e->getMessage());
@@ -71,23 +72,4 @@ require_once("Model.php");
 		}
 	}
 
-	/**
-	*Regarde si un acteur existe
-	*@param $nomact nom acteur
-	*@param $prenomact prenom acteur
-	**/
-	function existAct($nomact, $prenomact){
-		global $bd;
-		try{
-			$req=$bd->prepare('SELECT id_acteur FROM acteur WHERE nom_acteur=? OR prenom_acteur=?');
-			$req->execute(array($nomact,$prenomact));
-			$res=$req->fetch();
-			return($res[0]);
-		}
-		catch(PDOException $e)
-		{
-			echo($e->getMessage());
-			die("<br> Erreur lors de la recherche dans la table acteur");
-		}
-	}
 ?>

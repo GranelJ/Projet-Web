@@ -17,16 +17,16 @@
 		$nompacteur = htmlspecialchars($_POST['NomPActeur']);
 		$prenompacteur = htmlspecialchars($_POST['PrenomPActeur']);
 
-		$existact = existAct($nompacteur,$prenompacteur);
-		if (!$existact>0){
+		$existact = getIdAct($nompacteur,$prenompacteur);
+		if (!$existact>0){//si acteur existe pas 
 			createActeur($nompacteur,$prenompacteur);
 		}
 		
-		$existreal = existReal($nomrealisateur, $prenomrealisateur);
-		if(!$existreal>0){
+		$existreal = getIdReal($nomrealisateur, $prenomrealisateur);
+		if(!$existreal>0){//si realisateur existe pas
 			createRealisateur($nomrealisateur,$prenomrealisateur);
 		}
-		
+
 		$id_real = getIdReal($nomrealisateur, $prenomrealisateur);
 		$id_act = getIdAct($nompacteur, $prenompacteur);
 		$id_cat = getIdCat($cat);

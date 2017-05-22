@@ -16,7 +16,7 @@
 				<OPTION>Action</OPTION> <!--tous les types de film dans la bd-->
 			</select> <br>
 			Annee : <br>
-			<input type="text" name="Annee"><br>
+			<input type="integer" name="Annee"><br>
 			Vu : <br>
 			<input type="radio" name="Vu"><br>
 			Note /5 : <br>
