@@ -1,4 +1,5 @@
 <?php
+    require_once("/app/model/ModelCategorieFilm.php");
     if (isset($_POST['namecat'])){
         $cat = htmlspecialchars($_POST['namecat']); 
         createCategorieFilm($cat);
