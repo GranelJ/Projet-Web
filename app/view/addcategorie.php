@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Ajout catégorie</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
     </head>
 
     <body>

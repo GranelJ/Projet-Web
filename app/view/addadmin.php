@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Ajout administrateur</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
     </head>
 
     <body>
