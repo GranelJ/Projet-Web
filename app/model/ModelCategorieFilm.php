@@ -20,7 +20,7 @@ require_once("Model.php");
    	}
 
    	/**
-   	 *Creer un realisateur
+   	 *Creer une categorie de film
    	 *@param $lib libelle de la categorie
    	**/
    	function createCategorieFilm($lib){
