@@ -18,7 +18,7 @@
 			Annee : <br>
 			<input type="number" name="Annee"><br>
 			Vu : <br>
-			<input type="checkbox" name="Vu"><br>
+			<input type="checkbox" name="Vu" value="vu"><br>
 			Note /5 : <br>
 			<input type="number" name="Note"><br>
 			Nom realisateur : <br>

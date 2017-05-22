@@ -4,10 +4,8 @@
 	require_once('../model/ModelActeur.php');
 	require_once('../model/ModelRealisateur.php');
 
-	if(isset($_POST['NomFilm']) AND isset($_POST['Categorie']) AND isset($_POST['Annee']) AND isset($_POST['Vu']) AND 
-	isset($_POST['Note']) AND isset($_POST['NomRealisateur']) AND isset($_POST['PrenomRealisateur']) AND 
-	isset($_POST['NomPActeur']) AND isset($_POST['PrenomPActeur'])){
-		/*$nomfilm = htmlspecialchars($_POST['NomFilm']);
+	if(isset($_POST['NomFilm']) AND isset($_POST['Categorie']) AND isset($_POST['Annee']) AND isset($_POST['Vu']) AND isset($_POST['Note']) AND isset($_POST['NomRealisateur']) AND isset($_POST['PrenomRealisateur']) AND isset($_POST['NomPActeur']) AND isset($_POST['PrenomPActeur'])){
+		$nomfilm = htmlspecialchars($_POST['NomFilm']);
 		$cat = htmlspecialchars($_POST['Categorie']);
 		$annee = htmlspecialchars($_POST['Annee']);
 		$vu = htmlspecialchars($_POST['Vu']);
@@ -17,7 +15,7 @@
 		$nompacteur = htmlspecialchars($_POST['NomPActeur']);
 		$prenompacteur = htmlspecialchars($_POST['PrenomPActeur']);
 
-		$existact = getIdAct($nompacteur,$prenompacteur);
+		/*$existact = getIdAct($nompacteur,$prenompacteur);
 		if (!$existact>0){//si acteur existe pas 
 			createActeur($nompacteur,$prenompacteur);
 		}
