@@ -28,7 +28,7 @@ require_once("Model.php");
 	function createFilm($nomfilm, $anneefilm, $catfilm, $realfilm, $acteurfilm){
 		global $bd;
 		try{
-			$req = $bd->execute('INSERT INTO film (nom_film, annee_film, cat_film, realisateur_film, acteur_film) VALUES(?, ?, ?, ?, ?)');
+			$req = $bd->execute('INSERT INTO film (nom_film, annee_film, cat_film, realisateur_film, acteur_film) VALUES (?, ?, ?, ?, ?)');
 			$req->execute(array($nomfilm,$anneefilm,$catfilm,$realfilm,$acteurfilm));
 		}
 		catch(PDOException $e){

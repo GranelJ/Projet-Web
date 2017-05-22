@@ -26,7 +26,7 @@ require_once("Model.php");
    	function createCategorieFilm($lib){
 		global $bd;
    		try{
-   			$req = $bd->prepare('INSERT INTO categorie_film (lib_cat) VALUES(?)');
+   			$req = $bd->prepare('INSERT INTO categorie_film (lib_cat) VALUES (?)');
    			$req->execute(array($lib));
    		}
    		catch(PDOException $e)

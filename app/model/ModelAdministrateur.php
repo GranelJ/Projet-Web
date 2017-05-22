@@ -28,7 +28,7 @@ require_once("Model.php");
   function createAdministrateur($email,$mdp){
     global $bd;
     try{
-      $req = $bd->prepare('INSERT INTO administrateur (email_admin, mdp_admin) VALUES(?, ?)');
+      $req = $bd->prepare('INSERT INTO administrateur (email_admin, mdp_admin) VALUES (?, ?)');
       $req->execute(array($mail,$mdp));
     }
     catch(PDOException $e){
