@@ -11,6 +11,7 @@
 			<input type="text" name="NomFilm"><br>
 			Categorie : <br>
 			<select name="Categorie">
+				
 				<OPTION>Science Fiction</OPTION>
 				<OPTION>Action</OPTION> <!--tous les types de film dans la bd-->
 			</select> <br>
