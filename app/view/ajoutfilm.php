@@ -19,7 +19,7 @@
 			<input type="text" name="Annee"><br>
 			Vu : <br>
 			<input type="radio" name="Vu"><br>
-			Note : <br>
+			Note /5 : <br>
 			<input type="text" name="Note"><br>
 			Realisateur : <br>
 			<input type="text" name="Realisateur"><br>

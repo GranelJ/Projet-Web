@@ -1,5 +1,5 @@
 <?php
-	require_once('/app/model/ModelUtilisateur.php');
+	require_once('../model/ModelUtilisateur.php');
 
 	if(isset($_POST['email']) AND isset($_POST['mdp']) AND isset($_POST['Cmdp'])){
 		$email = htmlspecialchars($_POST['email']);
