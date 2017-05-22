@@ -1,7 +1,7 @@
 <?php
 	require_once('../model/ModelAdmin.php');
 
-	if(isset($_POST['email']) AND isset($_POST['mdp'])){
+	if(!empty($_POST['email']) AND !empty($_POST['mdp'])){
 		$email = htmlspecialchars($_POST['email']);
 		$mdp = htmlspecialchars($_POST['mdp']);
 		$mdp = sha1($mdp);
