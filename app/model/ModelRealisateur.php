@@ -63,7 +63,7 @@ require_once("Model.php");
 	function getIdReal($nomreal, $prenomreal){
 		global $bd;
 		try{
-			$req = $bd->prepare('DELETE FROM realisateur WHERE nom_realisateur = ? AND prenom_realisateur = ?');
+			$req = $bd->prepare('SELECT id_realisateur FROM realisateur WHERE nom_realisateur = ? AND prenom_realisateur = ?');
 			$req->execute(array($nomreal,$prenomreal));
 			$res=$req->fetch();
 			return($res[0]);

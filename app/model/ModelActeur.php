@@ -61,7 +61,7 @@ require_once("Model.php");
 	function getIdAct($nomact, $prenomact){
 		global $bd;
 		try{
-			$req = $bd->prepare('DELETE FROM acteur WHERE nom_acteur = ? AND prenom_acteur = ?');
+			$req = $bd->prepare('SELECT id_acteur FROM acteur WHERE nom_acteur = ? AND prenom_acteur = ?');
 			$req->execute(array($nomact,$prenomact));
 			$res=$req->fetch();
 			return($res[0]);

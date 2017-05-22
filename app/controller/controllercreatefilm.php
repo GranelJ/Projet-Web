@@ -35,5 +35,5 @@
 		header('refresh:5;url=/app/view/ajoutfilm.php');
 		}
 		echo "L'un des champs n'est pas rempli";
-		header('refresh:3;url=/app/view/ajoutfilm.php')
+		header('refresh:3;url=/app/view/ajoutfilm.php');
 ?>
