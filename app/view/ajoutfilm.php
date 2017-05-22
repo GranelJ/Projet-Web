@@ -23,7 +23,7 @@
 			<input type="text" name="Note"><br>
 			Realisateur : <br>
 			<input type="text" name="Realisateur"><br>
-			Acteurs principaux : <br>
+			Acteur principal : <br>
 			<input type="text" name="PActeur"><br>
 
 			<input type="Submit" name="AddFilm">
