@@ -7,7 +7,6 @@
             header("Location: /app/view/listefilmutil.php");
         }
     }else{
-        echo"fuck";
-        //header("Location: /app/view/accueil.php");
+        header("Location: /app/view/accueil1.php");
     }
 ?>
