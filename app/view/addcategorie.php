@@ -5,7 +5,7 @@
     </head>
 
     <body>
-        <form method="POST" action="/app/controller/controllercategoriefilm.php">
+        <form method="POST" action="/app/controller/controlleraddcategoriefilm.php">
 			Catégorie : <br>
 			<input type="text" name="namecat"><br>
             <input type="Submit" name="Addcat">

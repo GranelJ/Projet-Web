@@ -4,6 +4,6 @@
         $cat = htmlspecialchars($_POST['namecat']); 
         createCategorieFilm($cat);
     	echo "Catégorie ajouté, vous allez être redirigé.";
-		header('refresh:5;url=/app/view/dashboardadmin.php');
+		header('refresh:3;url=/app/view/dashboardadmin.php');
     }
 ?>
