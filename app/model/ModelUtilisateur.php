@@ -33,7 +33,7 @@ require_once("Model.php");
    		catch(PDOException $e)
    		{
    			echo($e->getmessage());
-   			die("<br> Erreur lors de l'ajout d'un étudiant à la table utilisateur");
+   			die("<br> Erreur lors de l'ajout d'un utilisateur à la table utilisateur");
    		}
    	}
    	/**
