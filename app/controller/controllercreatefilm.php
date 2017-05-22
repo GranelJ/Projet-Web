@@ -29,7 +29,7 @@
 
 		//$id_real = getIdReal($nomrealisateur, $prenomrealisateur);
 		//$id_act = getIdAct($nompacteur, $prenompacteur);
-		$id_cat = getIdCat($cat);
+		//$id_cat = getIdCat($cat);
 		createFilm($nomfilm, $annee, $id_cat, $id_real, $id_act);
 		echo "Film ajouté, vous allez être redirigé vers le formulaire d'ajout de film.";
 		header('refresh:5;url=/app/view/ajoutfilm.php');
