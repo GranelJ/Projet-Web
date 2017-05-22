@@ -1,5 +1,5 @@
 <?php
-    if((null!==$_COOKIE(['droit'])) AND (null!==$_COOKIE(['info']))){
+    if(!empty($_COOKIE(['droit'])) AND (!empty($_COOKIE(['info'])))){
         $droit = $_COOKIE(['droit']);
         if ($droit==sha1("admin")){
             header("Location: /app/view/dashboard.php");
