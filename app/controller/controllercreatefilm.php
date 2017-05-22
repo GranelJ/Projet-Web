@@ -27,8 +27,8 @@
 			createRealisateur($nomrealisateur,$prenomrealisateur);
 		}*/
 
-		$id_real = getIdReal($nomrealisateur, $prenomrealisateur);
-		$id_act = getIdAct($nompacteur, $prenompacteur);
+		//$id_real = getIdReal($nomrealisateur, $prenomrealisateur);
+		//$id_act = getIdAct($nompacteur, $prenompacteur);
 		$id_cat = getIdCat($cat);
 		createFilm($nomfilm, $annee, $id_cat, $id_real, $id_act);
 		echo "Film ajouté, vous allez être redirigé vers le formulaire d'ajout de film.";

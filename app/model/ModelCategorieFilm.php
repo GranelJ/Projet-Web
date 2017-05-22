@@ -61,7 +61,8 @@ require_once("Model.php");
 		try{
 			$req=$bd->prepare('SELECT id_catfilm WHERE id_cat = ?');
 			$req->execute(array($lib));
-			return($req);
+			$res=$req->fetch();
+			return($res);
 		}
 		catch(PDOException $e)
 		{
