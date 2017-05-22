@@ -1,7 +1,7 @@
 <?php
 	require_once('../model/ModelAdmin.php');
 
-	if(!empty($_POST['email']) && !empty($_POST['mdp'])){
+	if(!empty($_POST['email'])){
 		$email = htmlspecialchars($_POST['email']);
 		$mdp = htmlspecialchars($_POST['mdp']);
 		if(!getIdAdmin($email)>0){
