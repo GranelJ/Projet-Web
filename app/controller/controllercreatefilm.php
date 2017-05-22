@@ -18,12 +18,12 @@
 		$prenompacteur = htmlspecialchars($_POST['PrenomPActeur']);
 
 		$existact = getIdAct($nompacteur,$prenompacteur);
-		if (!$existact>0){//si acteur existe pas 
+		if ($existact==false){//si acteur existe pas 
 			createActeur($nompacteur,$prenompacteur);
 		}
 		
 		$existreal = getIdReal($nomrealisateur, $prenomrealisateur);
-		if(!$existreal>0){//si realisateur existe pas
+		if($existreal==false){//si realisateur existe pas
 			createRealisateur($nomrealisateur,$prenomrealisateur);
 		}
 
@@ -35,4 +35,5 @@
 		echo "Film ajouté, vous allez être redirigé vers le formulaire d'ajout de film.";
 		header('refresh:5;url=/app/view/ajoutfilm.php');
 		}
+		echo "L'un des champs n'est pas rempli";
 ?>

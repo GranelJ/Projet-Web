@@ -20,7 +20,7 @@
 			Vu : <br>
 			<input type="checkbox" name="Vu"><br>
 			Note /5 : <br>
-			<input type="text" name="Note"><br>
+			<input type="number" name="Note"><br>
 			Nom realisateur : <br>
 			<input type="text" name="NomRealisateur"><br>
 			Prenom realisateur : <br>
