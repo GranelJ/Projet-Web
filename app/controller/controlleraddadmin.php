@@ -1,5 +1,5 @@
 <?php
-	require_once('../model/ModelAdmin.php');
+	require_once('../model/ModelAdministrateur.php');
 
 	if(!empty($_POST['emailadmin']) AND !empty($_POST['mdpadmin'])){
 		$email = htmlspecialchars($_POST['emailadmin']);
