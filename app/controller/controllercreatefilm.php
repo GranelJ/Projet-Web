@@ -4,7 +4,9 @@
 	require_once('../model/ModelActeur.php');
 	require_once('../model/ModelRealisateur.php');
 
-	if(isset($_POST['NomFilm']) AND isset($_POST['Categorie']) AND isset($_POST['Annee']) AND isset($_POST['Vu']) AND isset($_POST['Note']) AND isset($_POST['NomRealisateur']) AND isset($_POST['PrenomRealisateur']) AND isset($_POST['NomPActeur']) AND isset($_POST['PrenomPActeur'])){
+	if(isset($_POST['NomFilm']) AND isset($_POST['Categorie']) AND isset($_POST['Annee']) AND isset($_POST['Vu']) AND 
+	isset($_POST['Note']) AND isset($_POST['NomRealisateur']) AND isset($_POST['PrenomRealisateur']) AND 
+	isset($_POST['NomPActeur']) AND isset($_POST['PrenomPActeur'])){
 		$nomfilm = htmlspecialchars($_POST['NomFilm']);
 		$cat = htmlspecialchars($_POST['Categorie']);
 		$annee = htmlspecialchars($_POST['Annee']);
@@ -14,6 +16,16 @@
 		$prenomrealisateur = htmlspecialchars($_POST['PrenomRealisateur']);
 		$nompacteur = htmlspecialchars($_POST['NomPActeur']);
 		$prenompacteur = htmlspecialchars($_POST['PrenomPActeur']);
+
+		$existact = existAct($nompacteur,$prenompacteur);
+		if (!$existact>0){
+			createActeur($nompacteur,$prenompacteur);
+		}
+		
+		$existreal = existReal($nomrealisateur, $prenomrealisateur);
+		if(!$existreal>0){
+			createRealisateur($nomrealisateur,$prenomrealisateur);
+		}
 		
 		$id_real = getIdReal($nomrealisateur, $prenomrealisateur);
 		$id_act = getIdAct($nompacteur, $prenompacteur);

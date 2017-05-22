@@ -72,4 +72,24 @@ require_once("Model.php");
 			die("<br> Erreur lors de la recuperation de l'id dans la table realisateur");
 		}
 	}
+
+	/**
+	*Regarde si un realisateur existe
+	*@param $nomreal nom realisateur
+	*@param $prenomreal prenom realisateur
+	**/
+	function existReal($nomreal, $prenomreal){
+		global $bd;
+		try{
+			$req=$bd->prepare('SELECT id_realisateur FROM realisateur WHERE nom_realisateur=? OR prenom_realisateur=?');
+			$req->execute(array($nomreal,$prenomreal));
+			$res=$req->fetch();
+			return($res[0]);
+		}
+		catch(PDOException $e)
+		{
+			echo($e->getMessage());
+			die("<br> Erreur lors de la recherche dans la table realisateur");
+		}
+	}
 ?>

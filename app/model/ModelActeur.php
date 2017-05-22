@@ -70,4 +70,24 @@ require_once("Model.php");
 			die("<br> Erreur lors de la recuperation de l'id dans la table acteur");
 		}
 	}
+
+	/**
+	*Regarde si un acteur existe
+	*@param $nomact nom acteur
+	*@param $prenomact prenom acteur
+	**/
+	function existAct($nomact, $prenomact){
+		global $bd;
+		try{
+			$req=$bd->prepare('SELECT id_acteur FROM acteur WHERE nom_acteur=? OR prenom_acteur=?');
+			$req->execute(array($nomact,$prenomact));
+			$res=$req->fetch();
+			return($res[0]);
+		}
+		catch(PDOException $e)
+		{
+			echo($e->getMessage());
+			die("<br> Erreur lors de la recherche dans la table acteur");
+		}
+	}
 ?>
