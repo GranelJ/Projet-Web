@@ -14,5 +14,8 @@
 			echo "Erreur lors de la saisie du mot de passe";
 			header("Location: /app/view/inscription.php");
 		}
+	}else{
+		echo "Tous les champs ne sont pas remplis";
+		header("refresh:2;url:/app/view/inscription.php");
 	}
 ?>
