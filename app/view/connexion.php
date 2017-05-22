@@ -10,8 +10,9 @@
 			
 			<div class="input-group">
   			<span class="input-group-addon" id="basic-addon1"></span>
-  			<input type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon1" name="email">
-			Mot de Passe : <br>
+  			<input type="email" name="email" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
+			<br>
+			Mot de Passe :
 			<input type="password" name="mdp"><br>
 			<input type="Submit" name="inscrit">
 		</form>
