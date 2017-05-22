@@ -57,7 +57,7 @@ require_once("Model.php");
 	 *@param $nomact nom de l'acteur
 	 *@param $prenomact prenom de l'acteur
 	**/
-	function getId($nomact, $prenomact){
+	function getIdAct($nomact, $prenomact){
 		global $bd;
 		try{
 			$req = $bd->prepare('DELETE FROM acteur WHERE nom_acteur = ? AND prenom_acteur = ?');

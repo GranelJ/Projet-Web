@@ -51,4 +51,22 @@ require_once("Model.php");
    			die("<br> Erreur lors de la supression de la catégorie dans la table categorie_film");
    		}
    	}
+
+   	/**
+   	 *Recupere id d'une categorie
+   	 *@param $lib libelle de la categorie
+   	**/
+	function getIdCat($lib){
+		global $bd;
+		try{
+			$req=$bd->prepare('SELECT id_catfilm WHERE id_cat = ?');
+			$req->execute(array($lib));
+			return($req);
+		}
+		catch(PDOException $e)
+		{
+			echo($e->getMessage());
+			die("<br> Erreur lors de la recupération de l'id dans la table categorie_film");
+		}
+	}
 ?>

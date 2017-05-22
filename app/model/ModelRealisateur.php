@@ -60,7 +60,7 @@ require_once("Model.php");
 	 *@param $prenomreal prenom du realisateur
 	 *@return $req id du realisateur
 	**/
-	function getId($nomreal, $prenomreal){
+	function getIdReal($nomreal, $prenomreal){
 		global $bd;
 		try{
 			$req = $bd->prepare('DELETE FROM realisateur WHERE nom_realisateur = ? AND prenom_realisateur = ?');

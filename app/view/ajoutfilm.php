@@ -21,10 +21,14 @@
 			<input type="radio" name="Vu"><br>
 			Note /5 : <br>
 			<input type="text" name="Note"><br>
-			Realisateur : <br>
-			<input type="text" name="Realisateur"><br>
-			Acteur principal : <br>
-			<input type="text" name="PActeur"><br>
+			Nom realisateur : <br>
+			<input type="text" name="NomRealisateur"><br>
+			Prenom realisateur : <br>
+			<input type="text" name="PrenomRealisateur"><br>
+			Nom acteur principal : <br>
+			<input type="text" name="NomPActeur"><br>
+			Prenom acteur principal : <br>
+			<input type="text" name="PrenomPActeur"><br>
 
 			<input type="Submit" name="AddFilm">
 		</form>
