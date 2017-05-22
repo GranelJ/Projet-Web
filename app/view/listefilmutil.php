@@ -3,8 +3,10 @@
 	<head>
 		<title>Liste des films</title>
 	</head>
-		<!--tous les films de l'utilisateur-->
+		
 	<body>
-		<a href="ajoutfilm.php">Ajouter un film</a>
+		<a href="/app/view/ajoutfilm.php">Ajouter un film</a>
+		<a href="/app/view/controllerdeconnexion.php">Déconnexion</a>
+		<!--tous les films de l'utilisateur-->
 	</body>
 </html>

@@ -11,7 +11,7 @@
 		$pacteur = htmlspecialchars($_POST['PActeur']);
 		
 		createFilm($nomfilm, $cat, $annee, $vu, $note, $realisateur, $pacteur);
-		echo "Film ajouté, vous allez être redirigé";
-		header('refresh:3;url=/app/view/listefilm.php');
+		echo "Film ajouté, vous allez être redirigé vers le formulaire d'ajout de film.";
+		header('refresh:5;url=/app/view/ajoutfilm.php');
 		}
 ?>

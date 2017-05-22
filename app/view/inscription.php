@@ -13,6 +13,7 @@
 			Confirmation mot de passe : <br>
 			<input type="password" name="Cmdp"><br>
 			<input type="Submit" name="inscrit">
+			<a href="/app/view/accueil.php">Retour</a>
 		</form>
 	</body>
 </html>

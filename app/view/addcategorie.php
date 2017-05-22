@@ -9,6 +9,7 @@
 			Catégorie : <br>
 			<input type="text" name="namecat"><br>
             <input type="Submit" name="Addcat">
+            <a href="/app/view/dashboardadmin.php">Retour</a>
         </form>
     </body>
 </html>

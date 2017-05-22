@@ -12,5 +12,6 @@
 			<input type="password" name="mdp"><br>
             <input type="Submit" name="Addadmin">
         </form>
+        <a href="dashboardadmin.php">Retour</a>
     </body>
 </html>

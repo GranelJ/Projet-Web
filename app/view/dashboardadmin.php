@@ -5,7 +5,8 @@
 	</head>
 
 	<body>
-		<a href="ajoutcategorie.php">Ajouter une categorie</a>
-		<a href="addadmin.php">Ajouter un admin</a>
+		<a href="/app/view/ajoutcategorie.php">Ajouter une categorie</a>
+		<a href="/app/view/addadmin.php">Ajouter un admin</a>
+		<a href="/app/view/controllerdeconnexion.php">Déconnexion</a>
 	</body>
 </html>
