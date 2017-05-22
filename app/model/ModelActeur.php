@@ -56,6 +56,7 @@ require_once("Model.php");
 	 *Get id d'un acteur
 	 *@param $nomact nom de l'acteur
 	 *@param $prenomact prenom de l'acteur
+	 *@return id de l'acteur
 	**/
 	function getIdAct($nomact, $prenomact){
 		global $bd;

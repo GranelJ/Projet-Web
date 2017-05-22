@@ -2,6 +2,7 @@
 	require_once('../model/ModelFilm.php');
 	require_once('../model/ModelCategorieFilm.php');
 	require_once('../model/ModelActeur.php');
+	require_once('../model/ModelRealisateur.php');
 
 	if(isset($_POST['NomFilm']) AND isset($_POST['Categorie']) AND isset($_POST['Annee']) AND isset($_POST['Vu']) AND isset($_POST['Note']) AND isset($_POST['NomRealisateur']) AND isset($_POST['PrenomRealisateur']) AND isset($_POST['NomPActeur']) AND isset($_POST['PrenomPActeur'])){
 		$nomfilm = htmlspecialchars($_POST['NomFilm']);
