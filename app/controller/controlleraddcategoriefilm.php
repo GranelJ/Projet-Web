@@ -1,7 +1,7 @@
 <?php
     require_once('../model/ModelCategorieFilm.php');
 
-    if(isset($_POST['namecat'])){
+    if(!empty($_POST['namecat'])){
         $cat = htmlspecialchars($_POST['namecat']); 
         createCategorieFilm($cat);
     	echo "Catégorie ajouté, vous allez être redirigé.";
