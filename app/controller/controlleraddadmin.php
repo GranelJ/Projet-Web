@@ -1,9 +1,9 @@
 <?php
 	require_once('../model/ModelAdmin.php');
 
-	if(!empty($_POST['email'])){
-		$email = htmlspecialchars($_POST['email']);
-		$mdp = htmlspecialchars($_POST['mdp']);
+	if((!empty($_POST['emailadmin'])) AND (!empty($_POST['mdpadmin']))){
+		$email = htmlspecialchars($_POST['emailadmin']);
+		$mdp = htmlspecialchars($_POST['mdpadmin']);
 		if(!getIdAdmin($email)>0){
 			$mdp = sha1($mdp);
 			createAdministrateur($email, $mdp);
