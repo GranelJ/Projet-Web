@@ -3,7 +3,7 @@
 require_once("Model.php");
 
     /**
-     *Selectionne tous les film qu'un utilisateur a rajoute
+     *Selectionne tous les film qu'un utilisateur a ajoute
      *@param @idutil id de l'utilisateur
      *@return la liste des films, note, et si l'utilisateur a vu le film
     **/
