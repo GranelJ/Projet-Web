@@ -88,7 +88,25 @@ require_once("Model.php");
    		}
    		catch(PDOException $e)
    		{
-   		cho($e->getMessage());
-   		die("Erreur lors de la récupération de l'id dans la table film");
+   			echo($e->getMessage());
+   			die("<br> Erreur lors de la récupération de l'id dans la table film");
+		}
+	}
+
+	/**
+	 *Recupere le nom du film et l'annee
+	 *@param $idfilm if du film
+	**/
+	function getNameFilmById($idfilm){
+		global $bd;
+		try{
+			$req = $bd->execute('SELECT nom_film, annee_film FROM film WHERE id_film = ?');
+			$req->execute(array($idfilm));
+			return $req;
+		}
+		catch(PDOException $e)
+		{
+			echo($e->getMessage());
+			die("<br> Erreur lors de la récupération du nom et de l'annee dans la table film");
 		}
 	}
