@@ -1,7 +1,5 @@
-<?php require_once("../model/ModelUtilisateur.php");?>
-<?php require_once("../model/ModelAdministrateur.php");?>
-
-<?php
+<?php require_once("../model/ModelUtilisateur.php");
+require_once("../model/ModelAdministrateur.php");
 	
 	$email = $_POST['email'];
 	$password = $_POST['mdp'];
