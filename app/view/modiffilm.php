@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+	$droit = $_COOKIE["droit"];
+	if($droit != sha1('util')){
+		header("Location: /app/view/accueil.php");
+	}
+?>
 <html>
 	<head>
 		<title> Modifier informations </title>
