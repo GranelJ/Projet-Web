@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+	$droit = $_COOKIE["droit"];
+	if($droit != sha1('admin')){
+		header("Location: /app/view/accueil.php");
+	}//verifie que la personne qui accède est un admin
+?>
 <html>
     <head>
         <title>Ajout administrateur</title>

@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<?php require_once("../controller/controllerprecreatefilm.php");?>
+<?php
+	$droit = $_COOKIE["droit"];
+	if($droit != sha1('util')){
+		header("Location: /app/view/accueil.php");
+	}//verifie que la personne qui accède est un utilisateur
+	require_once("../controller/controllerprecreatefilm.php");?>
 <html>
 	<head>
 		<title> Ajouter un film </title>

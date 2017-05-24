@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+	$droit = $_COOKIE["droit"];
+	if($droit != sha1('util')){
+		header("Location: /app/view/accueil.php");
+	}//verifie que la personne qui accède est un utilisateur
+?>
 <html>
 	<?php require_once("../controller/controllerlistefilm.php");?>
 	<head>

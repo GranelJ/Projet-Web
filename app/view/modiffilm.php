@@ -3,7 +3,7 @@
 	$droit = $_COOKIE["droit"];
 	if($droit != sha1('util')){
 		header("Location: /app/view/accueil.php");
-	}
+	}//verifie que la personne qui accède est un utilisateur
 ?>
 <html>
 	<head>
