@@ -26,6 +26,7 @@
 					echo"</tr>";
 				}
 			?>
+		</table>
 		<!--tous les films de l'utilisateur-->
 	</body>
 </html>

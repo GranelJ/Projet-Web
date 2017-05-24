@@ -19,12 +19,12 @@
 		$prenompacteur = htmlspecialchars($_POST['PrenomPActeur']);
 
 		$existact = getIdAct($nompacteur,$prenompacteur);
-		if ($existact == null){//si acteur existe pas
+		if (empty($existact)){//si acteur existe pas
 			createActeur($nompacteur,$prenompacteur);
 		}
 		
 		$existreal = getIdReal($nomrealisateur, $prenomrealisateur);
-		if($existreal == null){//si realisateur existe pas
+		if(empty($existreal)){//si realisateur existe pas
 			createRealisateur($nomrealisateur,$prenomrealisateur);
 		}
 
