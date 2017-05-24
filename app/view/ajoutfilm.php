@@ -31,7 +31,7 @@
 			<input type="text" name="PrenomPActeur"><br>
 
             <button type="Submit" name="Addfilm" class="btn btn-default">Valider</button>
+			<a href="/app/view/listefilm.php"><button type="button" class="btn btn-default">Retour</button></a> <!--Bouton retour-->
 		</form>
-		<a href="/app/view/listefilm.php"><button type="button" class="btn btn-default">Retour</button></a> <!--Bouton retour-->
 	</body>
 </html>

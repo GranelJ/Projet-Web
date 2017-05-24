@@ -12,7 +12,7 @@
 			Mot de Passe : <br>
 			<input type="password" name="mdpadmin"><br>
             <button type="Submit" name="Addadmin" class="btn btn-default">Valider</button>
+            <a href="/app/view/dashboardadmin.php"><button type="button" class="btn btn-default">Retour</button></a>
         </form>
-        <a href="/app/view/dashboardadmin.php"><button type="button" class="btn btn-default">Retour</button></a>
     </body>
 </html>

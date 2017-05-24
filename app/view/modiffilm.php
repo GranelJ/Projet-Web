@@ -27,7 +27,7 @@
 			<input type="text" name="PActeur"><br>
 
 			<button type="Submit" name="modiffilm" class="btn btn-default">Valider</button>
+			<a href="/app/view/listefilm.php"><button type="button" class="btn btn-default">Retour</button></a> <!--Bouton retour-->
 		</form>
-		<a href="/app/view/listefilm.php"><button type="button" class="btn btn-default">Retour</button></a> <!--Bouton retour-->
 	</body>
 </html>
