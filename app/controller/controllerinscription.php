@@ -1,7 +1,7 @@
 <?php
 	require_once('../model/ModelUtilisateur.php');
 
-	if(isset($_POST['email']) AND isset($_POST['mdp']) AND isset($_POST['Cmdp'])){
+	if(!empty($_POST['email']) AND !empty($_POST['mdp']) AND !empty($_POST['Cmdp'])){
 		//si tous les champs remplis
 		$email = htmlspecialchars($_POST['email']);
 		$mdp = htmlspecialchars($_POST['mdp']);
