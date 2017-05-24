@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php require_once("/app/controller/controllerprecreatefilm.php");?>
+<?php //require_once("/app/controller/controllerprecreatefilm.php");?>
 <html>
 	<head>
 		<title> Ajouter un film </title>
