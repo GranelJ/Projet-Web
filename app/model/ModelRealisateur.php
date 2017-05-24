@@ -5,7 +5,7 @@ require_once("Model.php");
     /**
    	 *Retourne les realisateurs
    	**/
-	function selectAll(){
+	function selectAllReal(){
 		global $bd;
    		try{
    			$req = $bd->prepare('SELECT nom_realisateur,prenom_realisateur FROM realisateur');
@@ -42,7 +42,7 @@ require_once("Model.php");
    	 *Supprimer un realisateur
    	 *@param $id identifiant du realisateur
    	**/
-	function deleteById($id){
+	function deleteByIdReal($id){
 		global $bd;
    		try{
    			$req = $bd->prepare('DELETE FROM realisateur WHERE id_realisateur= ?');

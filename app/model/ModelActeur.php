@@ -5,7 +5,7 @@ require_once("Model.php");
     /**
    	 *Retourne les acteurs
    	**/
-   	function selectAll(){
+   	function selectAllAct(){
 		global $bd;
    		try{
    			$req = $bd->prepare('SELECT nom_acteur, prenom_acteur FROM acteur');
@@ -41,7 +41,7 @@ require_once("Model.php");
    	 *Supprimer un acteur
    	 *@param $id identifiant de l'acteur
    	**/
-   	function deleteById($id){
+   	function deleteByIdAct($id){
 		global $bd;
    		try{
    			$req = $bd->prepare('DELETE FROM acteur WHERE id_acteur = ?');

@@ -5,7 +5,7 @@ require_once("Model.php");
     /**
    	 *Retourne les categories de films
    	**/
-   	function selectAll(){
+   	function selectAllCat(){
 		global $bd;
    		try{
    			$req = $bd->prepare('SELECT lib_cat FROM categorie_film');
@@ -40,7 +40,7 @@ require_once("Model.php");
    	 *Supprimer une categorie
    	 *@param $id identifiant de la categorie
    	**/
-   	function deleteById($id){
+   	function deleteByIdCat($id){
    		global $bd;
 		try{
    			$req = $bd->prepare('DELETE FROM categorie_film WHERE id_catfilm=?');

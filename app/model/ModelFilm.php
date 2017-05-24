@@ -5,7 +5,7 @@ require_once("Model.php");
 	/**
 	 *Retourne tous les films
 	**/
-	function selectAll(){
+	function selectAllFilm(){
 		global $bd;
 		try{
 		 	$req = $bd->prepare('SELECT nom_film,annee_film FROM film');
@@ -42,7 +42,7 @@ require_once("Model.php");
 	 *Supprime un film
 	 *@param $id id du film
 	**/
-	function deleteById($id){
+	function deleteByIdFilm($id){
 		global $bd;
    		try{
    			$req = $bd->execute('DELETE FROM film WHERE id_film = ?'); 
