@@ -6,4 +6,5 @@
     $film = selectbyutil($idutil);
     $idfilm=$film[id_film];
     $nomfilm=getNameFilmById($idfilm);
+    header("Location: /app/view/listefilmutil.php")
 ?>

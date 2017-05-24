@@ -1,6 +1,6 @@
-<?php require_once("../controller/controllerlistefilm.php");?>
 <!DOCTYPE html>
 <html>
+	<?php require_once("../controller/controllerlistefilm.php");?>
 	<head>
 		<title>Liste des films</title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
