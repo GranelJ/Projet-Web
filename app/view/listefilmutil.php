@@ -9,13 +9,6 @@
 	<body>
 		<a href="/app/view/ajoutfilm.php">Ajouter un film</a>
 		<a href="/app/controller/controllerdeconnexion.php">Déconnexion</a>
-		<table>
-			<tr>
-				<th>Nom</th>
-				<th>Annee</th>
-				<th>Note</th>
-				<th>Vu</th>
-		</table>
 		<!--tous les films de l'utilisateur-->
 	</body>
 </html>
