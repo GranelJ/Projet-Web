@@ -20,7 +20,7 @@
 					$droit = sha1("util");
 					setcookie("info", $id,time()+86400,"/");//dure un jour
 					setcookie("droit", $droit,time()+86400,"/");
-					header("Location: /app/view/listefilmutil.php");
+					header("Location: /user/listefilm");
 					//connexion util
 				}
 			}
@@ -35,7 +35,7 @@
 				$droit = sha1("admin");
 				setcookie("info", $id,time()+86400,"/");
 				setcookie("droit", $droit,time()+86400,"/");
-				header("Location: /app/view/dashboardadmin.php");
+				header("Location: /admin/dashboard");
 				//connexion admin
 			}
 		}

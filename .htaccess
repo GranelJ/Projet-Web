@@ -5,3 +5,9 @@ RewriteEngine On
 RewriteRule ^accueil$ app/view/accueil.php
 RewriteRule ^connexion$ app/view/connexion.php
 RewriteRule ^inscription$ app/view/inscription.php
+RewriteRule ^dashboard$ app/view/dashboardadmin.php
+RewriteRule ^listefilm$ app/view/listefilmutil.php
+RewriteRule ^$
+RewriteRule ^$
+RewriteRule ^$
+RewriteRule ^$
