@@ -8,7 +8,7 @@
 	<body>
 		<form method="POST" action="/app/controller/controllerconnexion.php">
 			<div class="input-group">
-  				<input type="email" name="email" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
+  				<input type="text" name="email" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
 			</div>
 			Mot de Passe : <br>
 			<input type="password" name="mdp"><br>
