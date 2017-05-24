@@ -1,11 +1,14 @@
 <?php
-	require_once('/app/model/ModelFilm.php');
-	require_once('/app/model/ModelCategorieFilm.php');
-	require_once('/app/model/ModelActeur.php');
-	require_once('/app/model/ModelRealisateur.php');
+	require_once('../model/ModelFilm.php');
+	require_once('../model/ModelCategorieFilm.php');
+	require_once('../model/ModelActeur.php');
+	require_once('../model/ModelRealisateur.php');
 
-	
+	if(!empty($_POST['NomFilm']) AND !empty($_POST['Categorie']) AND !empty($_POST['Annee']) AND !empty($_POST['Vu']) AND 
+	!empty($_POST['Note']) AND !empty($_POST['NomRealisateur']) AND !empty($_POST['PrenomRealisateur']) AND 
+	!empty($_POST['NomPActeur']) AND !empty($_POST['PrenomPActeur'])){
 		//si tous les champs remplis
+		header("Location: /fraise.php");
 		$nomfilm = htmlspecialchars($_POST['NomFilm']);
 		$cat = htmlspecialchars($_POST['Categorie']);
 		$annee = htmlspecialchars($_POST['Annee']);
@@ -31,6 +34,8 @@
 		$id_cat = getIdCat($cat);
 		createFilm($nomfilm, $annee, $id_cat, $id_real, $id_act);
 		echo "Film ajouté, vous allez être redirigé vers le formulaire d'ajout de film.";
-		header('refresh:4;url=/app/view/ajoutfilm.php');
-
+		header('refresh:4;url=../view/ajoutfilm.php');
+	}
+	echo "L'un des champs n'est pas rempli";
+	header('refresh:3;url=../view/ajoutfilm.php');
 ?>
