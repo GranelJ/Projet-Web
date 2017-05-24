@@ -22,7 +22,7 @@
 				<input type="password" name="Cmdp" class="form-control" aria-describedby="basic-addon1">				
 			</div>
 			<button type="Submit" name="inscrit" class="btn btn-default">Valider</button>
-			<a href="/app/view/accueil.php"><button type="button" class="btn btn-default">Retour</button></a>
+			<a href="/accueil"><button type="button" class="btn btn-default">Retour</button></a>
 		</form>
 	</body>
 </html>

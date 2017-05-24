@@ -13,6 +13,6 @@
 		$id = getIdFilm($nomfilm, $annee);
 		editFilm($id ,$nomfilm, $cat, $annee, $vu, $note, $realisateur, $pacteur);
 		echo "Film modifié";
-		header('refresh:3;url=/app/view/listefilm.php');
+		header('refresh:3;url=/user/listefilm');
 		}
 ?>

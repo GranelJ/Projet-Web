@@ -2,7 +2,7 @@
 <?php
 	$droit = $_COOKIE["droit"];
 	if($droit != sha1('admin')){
-		header("Location: /app/view/accueil.php");
+		header("Location: /accueil");
 	}//verifie que la personne qui accède est un admin
 ?>
 <html>
@@ -12,8 +12,8 @@
 	</head>
 
 	<body>
-		<a href="/app/view/addcategorie.php"><button type="button" class="btn btn-success">Ajouter une categorie</button></a>
-		<a href="/app/view/addadmin.php"><button type="button" class="btn btn-success">Ajouter un administrateur</button></a>
-		<a href="/app/controller/controllerdeconnexion.php"><button type="button" class="btn btn-danger">Deconnexion</button></a>
+		<a href="/admin/ajoutcategorie"><button type="button" class="btn btn-success">Ajouter une categorie</button></a>
+		<a href="/admin/ajoutadministrateur"><button type="button" class="btn btn-success">Ajouter un administrateur</button></a>
+		<a href="/deconnexion"><button type="button" class="btn btn-danger">Deconnexion</button></a>
 	</body>
 </html>

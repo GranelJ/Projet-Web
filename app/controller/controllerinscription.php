@@ -10,13 +10,13 @@
 			$mdp = sha1($mdp);
 			createUtilisateur($email, $mdp);
 			echo "Inscription validée";
-			header('refresh:3;url=/app/view/accueil.php');
+			header('refresh:3;url=/accueil');
 		}else{//si mot de passe different
 			echo "Erreur lors de la saisie du mot de passe";
-			header("refresh:2;url=/app/view/inscription.php");
+			header("refresh:2;url=/inscription");
 		}
 	}else{
 		echo "Tous les champs ne sont pas remplis";
-		header("refresh:2;url:/app/view/inscription.php");
+		header("refresh:2;url:/inscription");
 	}
 ?>

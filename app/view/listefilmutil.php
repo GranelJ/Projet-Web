@@ -2,7 +2,7 @@
 <?php
 	$droit = $_COOKIE["droit"];
 	if($droit != sha1('util')){
-		header("Location: /app/view/accueil.php");
+		header("Location: /accueil");
 	}//verifie que la personne qui accède est un utilisateur
 ?>
 <html>
@@ -13,8 +13,8 @@
 	</head>
 		
 	<body>
-		<a href="/app/view/ajoutfilm.php"><button type="button" class="btn btn-success">Ajouter un film</button></a>
-		<a href="/app/controller/controllerdeconnexion.php"><button type="button" class="btn btn-danger">Deconnexion</button></a>
+		<a href="/user/ajoutfilm"><button type="button" class="btn btn-success">Ajouter un film</button></a>
+		<a href="/deconnexion"><button type="button" class="btn btn-danger">Deconnexion</button></a>
 		<table>
 			<tr>
 				<th>Nom</th>

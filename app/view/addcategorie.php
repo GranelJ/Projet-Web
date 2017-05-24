@@ -2,7 +2,7 @@
 <?php
 	$droit = $_COOKIE["droit"];
 	if($droit != sha1('admin')){
-		header("Location: /app/view/accueil.php");
+		header("Location: /accueil");
 	}//verifie que la personne qui accède est un admin
 ?>
 <html>
@@ -16,7 +16,7 @@
 			Catégorie : <br>
 			<input type="text" name="namecat"><br>
             <button type="Submit" name="Addcat" class="btn btn-default">Valider</button>
-            <a href="/app/view/dashboardadmin.php"><button type="button" class="btn btn-default">Retour</button></a>
+            <a href="/admin/dashboard"><button type="button" class="btn btn-default">Retour</button></a>
         </form>
     </body>
 </html>

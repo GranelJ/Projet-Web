@@ -10,11 +10,13 @@
 			$verif_email = getIdUtil($email);
 			if(empty($verif_email)){ //Pas present dans table utilisateur
 				echo "Erreur dans l'email. Veuillez vous réauthentifier ou vous inscire";
+				header("refresh:2;url=/connexion");
 			}else{ //login existant
 				$password = sha1($password);
 				$verif_pass = getMdpUtil($email);
 				if ($verif_pass != $password){ //Pas le mot de passe correspondant
 					echo "Mot de passe utilisateur incorrect";
+					header("refresh:2;url=/connexion");
 				}else{
 					$id = getIdUtil($email);
 					$droit = sha1("util");
@@ -40,6 +42,6 @@
 			}
 		}
 	}else{
-		header('Location: /app/view/connexion.php');
+		header('Location: /connexion.php');
 	}
 ?>

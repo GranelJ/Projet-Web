@@ -2,7 +2,7 @@
 <?php
 	$droit = $_COOKIE["droit"];
 	if($droit != sha1('util')){
-		header("Location: /app/view/accueil.php");
+		header("Location: /accueil");
 	}//verifie que la personne qui accède est un utilisateur
 	require_once("../controller/controllerprecreatefilm.php");?>
 <html>
@@ -40,7 +40,7 @@
 			<input type="text" name="PrenomPActeur"><br>
 
             <button type="Submit" name="Addfilm" class="btn btn-default">Valider</button>
-			<a href="/app/view/listefilm.php"><button type="button" class="btn btn-default">Retour</button></a> <!--Bouton retour-->
+			<a href="/user/listefilm"><button type="button" class="btn btn-default">Retour</button></a> <!--Bouton retour-->
 		</form>
 	</body>
 </html>
