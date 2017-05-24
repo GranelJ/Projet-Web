@@ -7,8 +7,8 @@
 	</head>
 		
 	<body>
-		<a href="/app/view/ajoutfilm.php">Ajouter un film</a>
-		<a href="/app/controller/controllerdeconnexion.php">Déconnexion</a>
+		<a href="/app/view/ajoutfilm.php"><button type="button" class="btn btn-success">Ajouter un film</button></a>
+		<a href="/app/controller/controllerdeconnexion.php"><button type="button" class="btn btn-danger">Deconnexion</button></a>
 		<table>
 			<tr>
 				<th>Nom</th>

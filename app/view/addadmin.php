@@ -13,6 +13,6 @@
 			<input type="password" name="mdpadmin"><br>
             <input type="Submit" name="Addadmin">
         </form>
-        <a href="/app/view/dashboardadmin.php">Retour</a>
+        <a href="/app/view/dashboardadmin.php"><button type="button" class="btn btn-default">Retour</button></a>
     </body>
 </html>

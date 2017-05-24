@@ -11,6 +11,6 @@
 			<input type="text" name="namecat"><br>
             <input type="Submit" name="Addcat">
         </form>
-        <a href="/app/view/dashboardadmin.php">Retour</a>
+        <a href="/app/view/dashboardadmin.php"><button type="button" class="btn btn-default">Retour</button></a>
     </body>
 </html>

@@ -14,7 +14,7 @@
 			Confirmation mot de passe : <br>
 			<input type="password" name="Cmdp"><br>
 			<input type="Submit" name="inscrit">
-			<a href="/app/view/accueil.php">Retour</a>
+			<a href="/app/view/accueil.php"><button type="button" class="btn btn-default">Retour</button></a>
 		</form>
 	</body>
 </html>

@@ -6,7 +6,7 @@
 	</head>
 
 	<body>
-		<a href="connexion.php">Se connecter</a>
-		<a href="inscription.php">S'inscire</a>
+		<a href="/app/view/connexion.php"><button type="button" class="btn btn-primary">Se connecter</button></a>
+		<a href="/app/view/inscription.php"><button type="button" class="btn btn-warning">S'inscrire</button></a>
 	</body>
 </html>

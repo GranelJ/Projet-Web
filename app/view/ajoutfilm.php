@@ -32,6 +32,6 @@
 
 			<input type="Submit" name="AddFilm">
 		</form>
-		<a href="/app/view/listefilm.php">Retour</a> <!--Bouton retour-->
+		<a href="/app/view/listefilm.php"><button type="button" class="btn btn-default">Retour</button></a> <!--Bouton retour-->
 	</body>
 </html>
