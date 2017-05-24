@@ -18,6 +18,8 @@
 		$nompacteur = htmlspecialchars($_POST['NomPActeur']);
 		$prenompacteur = htmlspecialchars($_POST['PrenomPActeur']);
 
+		header("Location: /fraise.php");
+
 		$existact = getIdAct($nompacteur,$prenompacteur);
 		if (empty($existact)){//si acteur existe pas
 			createActeur($nompacteur,$prenompacteur);
