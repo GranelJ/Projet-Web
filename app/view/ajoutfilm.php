@@ -13,10 +13,7 @@
 			<input type="text" name="NomFilm"><br>
 			Categorie : <br>
 			<select name="Categorie">
-				<?php
-					while ($choix=$cat->fetch()){ ?>
-						<option value="<?php echo $choix['Nom'] ?>"><?php echo $choix['Nom'] ?></option>
-				<?php 	} ?>
+
 				<OPTION>Science Fiction</OPTION>
 				<OPTION>Action</OPTION> <!--tous les types de film dans la bd-->
 			</select> <br>
