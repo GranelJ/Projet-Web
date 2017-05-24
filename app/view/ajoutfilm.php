@@ -30,7 +30,7 @@
 			Prenom acteur principal : <br>
 			<input type="text" name="PrenomPActeur"><br>
 
-			<input type="Submit" name="AddFilm">
+            <button type="Submit" name="Addfilm" class="btn btn-default">Valider</button>
 		</form>
 		<a href="/app/view/listefilm.php"><button type="button" class="btn btn-default">Retour</button></a> <!--Bouton retour-->
 	</body>

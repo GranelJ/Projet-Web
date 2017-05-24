@@ -1,8 +1,8 @@
 <?php
 	require_once('../model/ModelFilm.php');
 
-	if(isset($_POST['NomFilm']) AND isset($_POST['Categorie']) AND isset($_POST['Annee']) 
-	AND isset($_POST['Vu']) AND isset($_POST['Note']) AND isset($_POST['Realisateur']) AND isset($_POST['PActeur'])){
+	if(!empty($_POST['NomFilm']) AND !empty($_POST['Categorie']) AND !empty($_POST['Annee']) 
+	AND !empty($_POST['Vu']) AND !empty($_POST['Note']) AND !empty($_POST['Realisateur']) AND !empty($_POST['PActeur'])){
 		$nomfilm = htmlspecialchars($_POST['NomFilm']);
 		$cat = htmlspecialchars($_POST['Categorie']);
 		$annee = htmlspecialchars($_POST['Annee']);

@@ -2,9 +2,9 @@
 	require_once("../model/ModelUtilisateur.php");
 	require_once("../model/ModelAdministrateur.php");
 	
-	$email = $_POST['email'];
-	$password = $_POST['mdp'];
-	if(isset($_POST['email']) AND isset($_POST['mdp'])){
+	if(!empty($_POST['email']) AND !empty($_POST['mdp'])){
+		$email = $_POST['email'];
+		$password = $_POST['mdp'];
 		$verif_email = getIdAdmin($email);
 		if(empty($verif_email)){ //Pas present dans table admin
 			$verif_email = getIdUtil($email);

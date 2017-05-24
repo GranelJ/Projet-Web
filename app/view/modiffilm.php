@@ -26,7 +26,7 @@
 			Acteurs principaux : <br>
 			<input type="text" name="PActeur"><br>
 
-			<input type="Submit" name="ModifFilm">
+			<button type="Submit" name="modiffilm" class="btn btn-default">Valider</button>
 		</form>
 		<a href="/app/view/listefilm.php"><button type="button" class="btn btn-default">Retour</button></a> <!--Bouton retour-->
 	</body>

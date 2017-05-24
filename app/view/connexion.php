@@ -11,7 +11,7 @@
   				<input type="text" name="email" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
 				<input type="password" name="mdp" class="form-control" placeholder="Mot de passe" aria-describedby="basic-addon1">
 			</div>
-			<input type="Submit" name="inscrit">
+            <button type="Submit" name="connexion" class="btn btn-default">Valider</button>
 		</form>
 	</body>
 </html>

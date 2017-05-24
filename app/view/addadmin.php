@@ -11,7 +11,7 @@
 			<input type="text" name="emailadmin"><br>
 			Mot de Passe : <br>
 			<input type="password" name="mdpadmin"><br>
-            <input type="Submit" name="Addadmin">
+            <button type="Submit" name="Addadmin" class="btn btn-default">Valider</button>
         </form>
         <a href="/app/view/dashboardadmin.php"><button type="button" class="btn btn-default">Retour</button></a>
     </body>
