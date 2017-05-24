@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php require_once("/app/controller/controllerprecreatefilm.php");?>
+<?php require_once("../controller/controllerprecreatefilm.php");?>
 <html>
 	<head>
 		<title> Ajouter un film </title>
@@ -14,9 +14,10 @@
 			Categorie : <br>
 			<select name="Categorie">
 				<?php
-					while ($choix=$cat->fetch()){ ?>
-						<option><?php echo $choix['Nom'] ?></option>
-				<?php 	} ?>
+					while ($choix=$cat->fetch()){
+						echo "<option>".$choix['Nom']."</option>";
+					 	}
+				?> 
 				<OPTION>Science Fiction</OPTION>
 				<OPTION>Action</OPTION> <!--tous les types de film dans la bd-->
 			</select> <br>
