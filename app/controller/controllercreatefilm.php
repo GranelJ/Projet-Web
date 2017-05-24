@@ -28,7 +28,7 @@
 			createRealisateur($nomrealisateur,$prenomrealisateur);
 		}
 		$cat = htmlspecialchars($_GET['Categorie']);
-		echo "$cat";
+		echo $cat;
 		/**$id_real = getIdReal($nomrealisateur, $prenomrealisateur);
 		$id_act = getIdAct($nompacteur, $prenompacteur);
 		$id_cat = getIdCat($cat);
