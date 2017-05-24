@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>Connexion</title>
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
 	</head>
 
 	<body>
