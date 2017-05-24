@@ -6,7 +6,7 @@
 	</head>
 
 	<body>
-		<a class="btn btn-success" role="button" href="/app/view/addcategorie.php">Ajouter une categorie</a>
+		<a class="btn btn-default" href="#" role="button">Lien</a>
 			<button type="button" class="btn btn-success">Ajouter une categorie</button>
 			<button type="button" class="btn btn-default">Ajouter un administrateur</button>
 			<button type="button" class="btn btn-default">Déconnexion</button>
