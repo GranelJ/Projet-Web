@@ -11,7 +11,7 @@ require_once("Model.php");
     function selectbyutil($idutil){
         global $bd;
         try{
-            $req = $bd->prepare("SELECT id_film,note_film,vu FROM realiser WHERE id_utilisateur = ?");
+            $req = $bd->prepare("SELECT id_film,note_film,vu FROM ajouter WHERE id_utilisateur = ?");
             $req->execute(array($idutil));
             return ($req);
         }

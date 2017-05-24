@@ -11,7 +11,7 @@ require_once("Model.php");
     function selectCatbyfilm($idfilm){
         global $bd;
         try{
-            $req = $bd->prepare("SELECT id_cat FROM realiser WHERE id_film = ?");
+            $req = $bd->prepare("SELECT id_cat FROM avoir WHERE id_film = ?");
             $req->execute(array($idfilm));
             return ($req);
         }
