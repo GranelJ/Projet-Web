@@ -21,7 +21,7 @@
 					$droit = sha1("util");
 					setcookie("info", $id,time()+86400,"/");//dure un jour
 					setcookie("droit", $droit,time()+86400,"/");
-					header("Location: /app/controller/controllerlistefilm.php");
+					header("Location: /app/controller/listefilmutil.php");
 					//connexion util
 				}
 			}

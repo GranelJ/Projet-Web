@@ -17,14 +17,12 @@
 				<th>Vu</th>
 			</tr>
 			<?php
-				while($ligne1=$film->fetch()){
 					echo"<tr>";
-					echo"<td>$ligne1[id_film]</td>";
-					echo"<td>$ligne1[note_film]</td>";
-					echo"<td>$ligne1[vu]</td>";
-					echo"<td>rien</td>";
+					echo"<td>nom_film</td>";
+					echo"<td>annee_film</td>";
+					echo"<td>note_film</td>";
+					echo"<td>vu</td>";
 					echo"</tr>";
-				}
 			?>
 		</table>
 		<!--tous les films de l'utilisateur-->
