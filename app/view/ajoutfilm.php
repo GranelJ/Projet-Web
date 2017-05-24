@@ -14,10 +14,9 @@
 			Categorie : <br>
 			<select name="Categorie">
 				<?php
-					while ($choix=$cat->fetch()){
-						echo "<OPTION>$choix[0]</OPTION>";
-					}
-				?>
+					while ($choix=$cat->fetch()){ ?>
+						<option value="<?php echo $choix['Nom'] ?>"><?php echo $choix['Nom'] ?></option>
+				<?php 	} ?>
 				<OPTION>Science Fiction</OPTION>
 				<OPTION>Action</OPTION> <!--tous les types de film dans la bd-->
 			</select> <br>
