@@ -3,3 +3,5 @@ Options +FollowSymlinks
 RewriteEngine On
 #Reecriture de la page d'accueil
 RewriteRule ^accueil$ app/view/accueil.php
+RewriteRule ^connexion$ app/view/connexion.php
+RewriteRule ^inscription$ app/view/inscription.php
