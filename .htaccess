@@ -1,4 +1,5 @@
+Options +FollowSymlinks
 # Activation du mod rewrite d'Apache 
 RewriteEngine On
 #Reecriture de la page d'accueil
-RewriteRule ^accueil$ /view/accueil\.php
+RewriteRule ^accueil$ /view/accueil.php
