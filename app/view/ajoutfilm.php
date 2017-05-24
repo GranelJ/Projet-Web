@@ -18,7 +18,7 @@
 			Nom du film : <br>
 			<input type="text" name="NomFilm"><br>
 			Categorie : <br>
-			<select name="Categorie_Film">
+			<select name="Categorie_Film" size ="1">
 				<?php
 					while ($choix=$cat->fetch()){
 						echo "<option value=".$choix[0].">".$choix[0]."</option>";
