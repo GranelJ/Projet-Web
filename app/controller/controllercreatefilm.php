@@ -27,7 +27,7 @@
 		if(empty($existreal)){//si realisateur existe pas
 			createRealisateur($nomrealisateur,$prenomrealisateur);
 		}
-
+		$cat = htmlspecialchars($_GET['Categorie']);
 		$id_real = getIdReal($nomrealisateur, $prenomrealisateur);
 		$id_act = getIdAct($nompacteur, $prenompacteur);
 		$id_cat = getIdCat($cat);
