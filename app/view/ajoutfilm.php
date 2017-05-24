@@ -15,11 +15,9 @@
 			<select name="Categorie">
 				<?php
 					while ($choix=$cat->fetch()){
-						echo "<option>".$choix['Nom']."</option>";
+						echo "<option>".$choix[0]."</option>";
 					 	}
-				?> 
-				<OPTION>Science Fiction</OPTION>
-				<OPTION>Action</OPTION> <!--tous les types de film dans la bd-->
+				?>  <!--tous les types de film dans la bd-->
 			</select> <br>
 			Annee : <br>
 			<input type="number" name="Annee"><br>
