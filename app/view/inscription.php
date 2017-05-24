@@ -21,7 +21,7 @@
 				<span class="input-group-addon" id="basic-addon1">Confirmation mot de passe</span>
 				<input type="password" name="Cmdp" class="form-control" aria-describedby="basic-addon1">				
 			</div>
-			<button type="Submit" name="inscrit "class="btn btn-default"></button>
+			<button type="Submit" name="inscrit "class="btn btn-default">Valider</button>
 			<input type="Submit" name="inscrit">
 			<a href="/app/view/accueil.php"><button type="button" class="btn btn-default">Retour</button></a>
 		</form>
