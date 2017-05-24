@@ -8,7 +8,7 @@
     <body>
         <form method="POST" action="/app/controller/controlleraddadmin.php">
 			Email : <br>
-			<input type="text" name="emailadmin"><br>
+			<input type="email" name="emailadmin"><br>
 			Mot de Passe : <br>
 			<input type="password" name="mdpadmin"><br>
             <button type="Submit" name="Addadmin" class="btn btn-default">Valider</button>
