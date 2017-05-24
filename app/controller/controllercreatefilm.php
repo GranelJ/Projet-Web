@@ -4,7 +4,7 @@
 	require_once('/app/model/ModelActeur.php');
 	require_once('/app/model/ModelRealisateur.php');
 
-	if(!empty($_POST['NomFilm']) AND !empty($_POST['Categorie']) AND !empty($_POST['Annee']) AND !empty($_POST['Vu']) AND 
+	if(!empty($_POST['NomFilm']) AND !empty($_POST['Categorie']) AND !empty($_POST['Annee']) AND 
 	!empty($_POST['Note']) AND !empty($_POST['NomRealisateur']) AND !empty($_POST['PrenomRealisateur']) AND 
 	!empty($_POST['NomPActeur']) AND !empty($_POST['PrenomPActeur'])){
 		//si tous les champs remplis
