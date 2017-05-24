@@ -6,8 +6,8 @@
 	</head>
 
 	<body>
-		<div class="btn-group" role="group" aria-label="...">
-			<button type="button" class="btn btn-default">Ajouter une categorie</button>
+		<div class="btn-group" role="group" aria-label="dashboard">
+			<button type="button" class="btn btn-default" href="/app/view/addcategorie.php">Ajouter une categorie</button>
 			<button type="button" class="btn btn-default">Ajouter un administrateur</button>
 			<button type="button" class="btn btn-default">Déconnexion</button>
 		</div>
