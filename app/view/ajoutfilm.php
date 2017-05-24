@@ -21,7 +21,7 @@
 			<select name="Categorie">
 				<?php
 					while ($choix=$cat->fetch()){
-						echo "<option value=".$choix[0].">".$choix[0]."</option>";
+						echo "<option value=".$choix['lib_cat'].">".$choix['lib_cat']."</option>";
 					 	}
 				?>  <!--tous les types de film dans la bd-->
 			</select> <br>
