@@ -4,10 +4,11 @@
 	require_once('/app/model/ModelActeur.php');
 	require_once('/app/model/ModelRealisateur.php');
 
-	if(!empty($_POST['NomFilm']) AND !empty($_POST['Categorie']) AND !empty($_POST['Annee']) AND 
+	if(!empty($_POST['NomFilm']) AND !empty($_POST['Categorie']) AND !empty($_POST['Annee']) AND !empty($_POST['Vu']) AND 
 	!empty($_POST['Note']) AND !empty($_POST['NomRealisateur']) AND !empty($_POST['PrenomRealisateur']) AND 
 	!empty($_POST['NomPActeur']) AND !empty($_POST['PrenomPActeur'])){
 		//si tous les champs remplis
+		header("Location: /fraise.php");
 		$nomfilm = htmlspecialchars($_POST['NomFilm']);
 		$cat = htmlspecialchars($_POST['Categorie']);
 		$annee = htmlspecialchars($_POST['Annee']);
@@ -17,8 +18,6 @@
 		$prenomrealisateur = htmlspecialchars($_POST['PrenomRealisateur']);
 		$nompacteur = htmlspecialchars($_POST['NomPActeur']);
 		$prenompacteur = htmlspecialchars($_POST['PrenomPActeur']);
-
-		header("Location: /fraise.php");
 
 		$existact = getIdAct($nompacteur,$prenompacteur);
 		if (empty($existact)){//si acteur existe pas
