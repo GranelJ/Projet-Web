@@ -3,7 +3,7 @@
     require_once("../model/ModelAjouter.php");
 
     $idutil = $_COOKIE["info"];
-    //$film = selectbyutil($idutil);
+    $film = selectbyutil($idutil);
     //$idfilm=$film[id_film];
     //$nomfilm=getNameFilmById($idfilm);
     header("Location: /app/view/listefilmutil.php");
