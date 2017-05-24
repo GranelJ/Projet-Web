@@ -1,4 +1,4 @@
-<?php require_once("/app/controller/controllerlistefilm.php");?>
+
 <!DOCTYPE html>
 <html>
 	<head>
