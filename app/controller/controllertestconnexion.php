@@ -9,6 +9,6 @@
             header("Location: /app/view/listefilmutil.php");
         }
     }else{
-        header("Location: /app/view/accueil.php");
+        header("Location: /accueil");
     }
 ?>
