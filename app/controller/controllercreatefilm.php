@@ -8,7 +8,6 @@
 	!empty($_POST['Note']) AND !empty($_POST['NomRealisateur']) AND !empty($_POST['PrenomRealisateur']) AND 
 	!empty($_POST['NomPActeur']) AND !empty($_POST['PrenomPActeur'])){
 		//si tous les champs remplis
-		header("Location: /fraise.php");
 		$nomfilm = htmlspecialchars($_POST['NomFilm']);
 		$cat = htmlspecialchars($_POST['Categorie']);
 		$annee = htmlspecialchars($_POST['Annee']);
