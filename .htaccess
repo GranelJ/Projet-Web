@@ -1,4 +1,4 @@
 # Activation du mod rewrite d'Apache 
 RewriteEngine On
 #Reecriture de la page d'accueil
-RewriteRule ^accueil$ /app/view/accueil.php [PT]
+RewriteRule ^accueil$ /app/view/accueil.php
