@@ -4,12 +4,12 @@
 	require_once("../model/ModelCategorieFilm.php");
 	require_once("../model/ModelFilm.php");
 
-	if(!empty($_POST['NomFilm']) AND !empty($_POST['Categorie']) AND !empty($_POST['Annee']) AND 
+	if(!empty($_POST['NomFilm']) AND !empty($_POST['Categorie_Film']) AND !empty($_POST['Annee']) AND 
 	!empty($_POST['Note']) AND !empty($_POST['NomRealisateur']) AND !empty($_POST['PrenomRealisateur']) AND 
 	!empty($_POST['NomPActeur']) AND !empty($_POST['PrenomPActeur'])){
 		//si tous les champs remplis
 		$nomfilm = htmlspecialchars($_POST['NomFilm']);
-		$cat = $_POST['Categorie'];
+		$cat = htmlspecialchars($_POST['Categorie_Film']);
 		$annee = htmlspecialchars($_POST['Annee']);
 		$vu = htmlspecialchars($_POST['Vu']);
 		$note = htmlspecialchars($_POST['Note']);
