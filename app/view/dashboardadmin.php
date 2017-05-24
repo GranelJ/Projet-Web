@@ -6,6 +6,11 @@
 	</head>
 
 	<body>
+		<div class="btn-group" role="group" aria-label="...">
+			<button type="button" class="btn btn-default">Ajouter une categorie</button>
+			<button type="button" class="btn btn-default">Ajouter un administrateur</button>
+			<button type="button" class="btn btn-default">Déconnexion</button>
+		</div>
 		<a href="/app/view/addcategorie.php">Ajouter une categorie</a>
 		<a href="/app/view/addadmin.php">Ajouter un admin</a>
 		<a href="/app/controller/controllerdeconnexion.php">Déconnexion</a>
