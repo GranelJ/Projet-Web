@@ -10,7 +10,7 @@
 			Catégorie : <br>
 			<input type="text" name="namecat"><br>
             <button type="Submit" name="Addcat" class="btn btn-default">Valider</button>
+            <a href="/app/view/dashboardadmin.php"><button type="button" class="btn btn-default">Retour</button></a>
         </form>
-        <a href="/app/view/dashboardadmin.php"><button type="button" class="btn btn-default">Retour</button></a>
     </body>
 </html>
