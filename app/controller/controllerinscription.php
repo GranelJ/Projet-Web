@@ -13,7 +13,7 @@
 			header('refresh:3;url=/app/view/accueil.php');
 		}else{//si mot de passe different
 			echo "Erreur lors de la saisie du mot de passe";
-			header("Location: /app/view/inscription.php");
+			header("refresh:2;url=/app/view/inscription.php");
 		}
 	}else{
 		echo "Tous les champs ne sont pas remplis";
