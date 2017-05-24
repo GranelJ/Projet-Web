@@ -59,7 +59,7 @@ require_once("Model.php");
 	function getIdCat($lib){
 		global $bd;
 		try{
-			$req=$bd->prepare('SELECT id_catfilm WHERE id_cat = ?');
+			$req=$bd->prepare('SELECT id_catfilm WHERE lib_cat = ?');
 			$req->execute(array($lib));
 			$res=$req->fetch();
 			return($res);
