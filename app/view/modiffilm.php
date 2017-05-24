@@ -4,6 +4,7 @@
 	if($droit != sha1('util')){
 		header("Location: /accueil");
 	}//verifie que la personne qui accède est un utilisateur
+	require_once("../controller/controllerprecreatefilm.php");
 ?>
 <html>
 	<head>
@@ -18,19 +19,26 @@
 			<input type="text" name="NomFilm"><br>
 			Categorie : <br>
 			<select name="Categorie">
-				<OPTION>Science Fiction</OPTION>
-				<OPTION>Action</OPTION> <!--tous les types de film dans la bd-->
+				<?php
+					while ($choix=$cat->fetch()){
+						echo "<option>".$choix[0]."</option>";
+					 	}
+				?>  <!--tous les types de film dans la bd-->
 			</select> <br>
 			Annee : <br>
-			<input type="text" name="Annee"><br>
+			<input type="number" name="Annee"><br>
 			Vu : <br>
-			<input type="radio" name="Vu"><br>
-			Note : <br>
-			<input type="text" name="Note"><br>
-			Realisateur : <br>
-			<input type="text" name="Realisateur"><br>
-			Acteurs principaux : <br>
-			<input type="text" name="PActeur"><br>
+			<input type="checkbox" name="Vu"><br>
+			Note /5: <br>
+			<input type="number" name="Note"><br>
+			Nom realisateur : <br>
+			<input type="text" name="NomRealisateur"><br>
+			Prenom realisateur : <br>
+			<input type="text" name="PrenomRealisateur"><br>
+			Nom acteur principal : <br>
+			<input type="text" name="NomPActeur"><br>
+			Prenom acteur principal : <br>
+			<input type="text" name="PrenomPActeur"><br>
 
 			<button type="Submit" name="modiffilm" class="btn btn-default">Valider</button>
 			<a href="/user/listefilm"><button type="button" class="btn btn-default">Retour</button></a> <!--Bouton retour-->
