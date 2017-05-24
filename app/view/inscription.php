@@ -7,12 +7,14 @@
 
 	<body>
 		<form method="POST" action="/app/controller/controllerinscription.php">
-			Email : <br>
-			<input type="text" name="email"><br>
-			Mot de Passe : <br>
-			<input type="password" name="mdp"><br>
-			Confirmation mot de passe : <br>
-			<input type="password" name="Cmdp"><br>
+			<div class="input-group">
+				<span class="input-group-addon" id="basic-addon1">Email</span>
+				<input type="email" name="email" class="form-control" aria-describedby="basic-addon1">
+				<span class="input-group-addon" id="basic-addon1">Mot de passe</span>
+				<input type="password" name="mdp" class="form-control" aria-describedby="basic-addon1">
+				<span class="input-group-addon" id="basic-addon1">Confirmation mot de passe</span>
+				<input type="password" name="Cmdp" class="form-control" aria-describedby="basic-addon1">				
+			</div>
 			<input type="Submit" name="inscrit">
 			<a href="/app/view/accueil.php"><button type="button" class="btn btn-default">Retour</button></a>
 		</form>
