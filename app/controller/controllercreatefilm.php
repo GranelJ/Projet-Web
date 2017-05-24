@@ -9,7 +9,7 @@
 	!empty($_POST['NomPActeur']) AND !empty($_POST['PrenomPActeur'])){
 		//si tous les champs remplis
 		$nomfilm = htmlspecialchars($_POST['NomFilm']);
-		$cat = htmlspecialchars($_POST['Categorie']);
+		$cat = $_POST['Categorie'];
 		$annee = htmlspecialchars($_POST['Annee']);
 		$vu = htmlspecialchars($_POST['Vu']);
 		$note = htmlspecialchars($_POST['Note']);
