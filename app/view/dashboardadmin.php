@@ -7,7 +7,7 @@
 
 	<body>
 		<div class="btn-group" role="group" aria-label="dashboard">
-			<button type="button" class="btn btn-default" href="/app/view/addcategorie.php">Ajouter une categorie</button>
+			<button type="button" class="btn btn-default"><a href="/app/view/addcategorie.php">Ajouter une categorie</a></button>
 			<button type="button" class="btn btn-default">Ajouter un administrateur</button>
 			<button type="button" class="btn btn-default">Déconnexion</button>
 		</div>
