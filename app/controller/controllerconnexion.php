@@ -17,12 +17,9 @@
 				if ($verif_pass != $password){ //Pas le mot de passe correspondant
 					echo "Mot de passe utilisateur incorrect";
 				}else{
-					$date = date("m.d.y");
-					$token = sha1($date);
 					$id = getIdUtil($email);
-					$token.= sha1($id); //concatene les 2
 					$droit = sha1("util");
-					setcookie("info", $token,time()+86400,"/");//dure un jour
+					setcookie("info", $id,time()+86400,"/");//dure un jour
 					setcookie("droit", $droit,time()+86400,"/");
 					header("Location: /app/view/listefilmutil.php");
 					//connexion util
@@ -35,12 +32,9 @@
 			if($verif_pass!=$password){ //Pas le mot de passe correspondant
 				echo "Mot de passe administrateur incorrect";
 			}else{
-				$date = date("m.d.y");
-				$token = sha1($date);
 				$id = getIdUtil($email);
 				$droit = sha1("admin");
-				$token.= sha1($id); //concatene les 2
-				setcookie("info", $token,time()+86400,"/");
+				setcookie("info", $id,time()+86400,"/");
 				setcookie("droit", $droit,time()+86400,"/");
 				header("Location: /app/view/dashboardadmin.php");
 				//connexion admin

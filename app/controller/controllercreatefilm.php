@@ -19,7 +19,7 @@
 		$prenompacteur = htmlspecialchars($_POST['PrenomPActeur']);
 
 		$existact = getIdAct($nompacteur,$prenompacteur);
-		if ($existact == null){//si acteur existe pas 
+		if ($existact == null){//si acteur existe pas
 			createActeur($nompacteur,$prenompacteur);
 		}
 		
