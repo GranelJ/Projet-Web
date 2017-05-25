@@ -21,10 +21,10 @@
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th>Nom film</th>
-						<th>Annee film</th>
-						<th>Note</th>
-						<th>1 si Vu</th>
+						<th>Nom du film</th>
+						<th>Annee du film</th>
+						<th>Note donnée</th>
+						<th>Vu</th>
 					</tr>
 				</thead>
 				<tbody>
