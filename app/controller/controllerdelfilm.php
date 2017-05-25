@@ -5,7 +5,7 @@
         $name=htmlspecialchars($_POST['namefilm']);
         $annee=htmlspecialchars($_POST['annee']);
         $id=getIdFilm($name,$annee);
-        deleteByIdFilm($id);
+        //deleteByIdFilm($id);
         echo "Le film a bien été supprimer";
         header("refresh:2;url=/user/listefilm");
     }
