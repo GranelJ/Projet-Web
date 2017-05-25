@@ -13,7 +13,8 @@
 	</head>
 		
 	<body>
-		<a href="/user/ajoutfilm"><button type="button" class="btn btn-success">Ajouter un film</button></a>
+		<a href="/user/ajoutfilm"><button type="button" class="btn btn-success">Ajouter un film (WIP)</button></a>
+		<a href="/user/suppressionfilm"><button type="button" class="btn btn-primary">Supprimer un film</button></a>
 		<a href="/deconnexion"><button type="button" class="btn btn-danger">Deconnexion</button></a>
 		<table>
 			<tr>

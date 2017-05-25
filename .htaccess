@@ -11,3 +11,4 @@ RewriteRule ^admin/ajoutcategorie$ app/view/addcategorie.php
 RewriteRule ^admin/ajoutadministrateur$ app/view/addadmin.php
 RewriteRule ^deconnexion$ app/controller/controllerdeconnexion.php
 RewriteRule ^user/ajoutfilm$ app/view/ajoutfilm.php
+RewriteRule ^user/suppressionfilm$ app/view/delfilm.php

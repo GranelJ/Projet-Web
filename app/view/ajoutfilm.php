@@ -15,7 +15,6 @@
 	<body>
 		<h1> Ajouter un film </h1>
 		<form method="POST" action="/app/controller/controllercreatefilm.php"> 
-			Nom du film : <br>
 			<div class="input-group">
                 <span class="input-group-addon" id="basic-addon1">Nom du film</span>
                 <input type="text" name="nomFilm" class="form-control" aria-describedby="basic-addon1">
