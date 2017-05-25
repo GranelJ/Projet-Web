@@ -103,7 +103,8 @@ require_once("Model.php");
 		try{
 			$req = $bd->prepare('SELECT nom_film, annee_film FROM film WHERE id_film = ?');
 			$req->execute(array($idfilm));
-			return $req;
+			$res=$req->fetch();
+			return $res[0];
 		}
 		catch(PDOException $e)
 		{

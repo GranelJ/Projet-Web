@@ -6,7 +6,8 @@
 	}//verifie que la personne qui accède est un utilisateur
 ?>
 <html>
-	<?php require_once("../controller/controllerlistefilm.php");?>
+	<?php require_once("../controller/controllerlistefilm.php");
+		  require_once("../model/ModelFilm.php"); ?>
 	<head>
 		<title>Liste des films</title>
 		<link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -18,14 +19,17 @@
 		<a href="/deconnexion"><button type="button" class="btn btn-danger">Deconnexion</button></a>
 		<table>
 			<tr>
-				<th>id_film</th>
+				<th>Nom film</th>
+				<th>Anne film</th>
 				<th>Note</th>
 				<th>1 si Vu</th>
 			</tr>
 			<?php
 				while($ligne1=$film->fetch()){
-					echo"<tr>";
-					echo"<td>$ligne1[id_film]</td>";
+					$infofilm=getNameFilmById($ligne1[id_film]);
+					echo "<tr>";
+					echo "<td>$infofilm[nom_film]</td>";
+					echo "<td>$infofilm[annee_film]</td>";
 					echo"<td>$ligne1[note_film]</td>";
 					echo"<td>$ligne1[vu]</td>";
 					echo"</tr>";
