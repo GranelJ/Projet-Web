@@ -26,10 +26,10 @@ require_once("Model.php");
      *Ajoute un film
      *@param $note note donne
      *@param $vu booleen vu
-     *@param $idutil id de l'utilisateur
      *@param $idfilm id du film
+     *@param $idutil id de l'utilisateur
      **/
-     function createfilmforajouter($note,$vu,$idutil,$idfilm){
+     function createfilmforajouter($note,$vu,$idfilm,$idutil){
          global $bd;
          try{
              $req=$bd->prepare("INSERT INTO ajouter VALUES (?,?,?,?)");

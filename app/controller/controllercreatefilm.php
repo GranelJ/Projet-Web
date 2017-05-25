@@ -5,9 +5,8 @@
 	require_once("../model/ModelFilm.php");
 	require_once("../model/ModelAjouter.php");
 
-	if(!empty($_POST['nomFilm']) AND !empty($_POST['catFilm']) AND !empty($_POST['annee']) AND 
-	!empty($_POST['note']) AND !empty($_POST['nomRealisateur']) AND !empty($_POST['prenomRealisateur']) AND 
-	!empty($_POST['nomPActeur']) AND !empty($_POST['prenomPActeur'])){
+	if(!empty($_POST['nomFilm']) AND !empty($_POST['catFilm']) AND !empty($_POST['annee']) AND !empty($_POST['nomRealisateur']) 
+	AND !empty($_POST['prenomRealisateur']) AND !empty($_POST['nomPActeur']) AND !empty($_POST['prenomPActeur'])){
 		//si tous les champs remplis
 		$nomfilm = htmlspecialchars($_POST['nomFilm']);
 		$cat = htmlspecialchars($_POST['catFilm']);
