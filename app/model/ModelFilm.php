@@ -45,7 +45,7 @@ require_once("Model.php");
 	function deleteByIdFilm($id){
 		global $bd;
    		try{
-   			$req = $bd->execute('DELETE FROM film WHERE id_film = ?'); 
+   			$req = $bd->prepare('DELETE FROM film WHERE id_film = ?'); 
    			$req->execute(array($id));
 		   }
 			catch(PDOException $e)
@@ -82,7 +82,7 @@ require_once("Model.php");
 	function getIdFilm($nomfilm, $anneefilm){
 		global $bd;
    		try{
-   			$req = $bd->execute('SELECT id_film FROM film WHERE nom_film = ? AND anneefilm =?');
+   			$req = $bd->prepare('SELECT id_film FROM film WHERE nom_film = ? AND anneefilm =?');
 			$req->execute(array($nomfilm ,$anneefilm));
 			$res=$req->fetch();
    			return $res[0]; 
@@ -101,7 +101,7 @@ require_once("Model.php");
 	function getNameFilmById($idfilm){
 		global $bd;
 		try{
-			$req = $bd->execute('SELECT nom_film, annee_film FROM film WHERE id_film = ?');
+			$req = $bd->prepare('SELECT nom_film, annee_film FROM film WHERE id_film = ?');
 			$req->execute(array($idfilm));
 			return $req;
 		}
