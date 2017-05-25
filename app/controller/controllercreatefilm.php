@@ -30,7 +30,10 @@
 		$id_real = getIdReal($nomrealisateur, $prenomrealisateur);
 		$id_act = getIdAct($nompacteur, $prenompacteur);
 		$id_cat = getIdCat($cat);
+		$idutil=$_COOKIE['info'];
 		createFilm($nomfilm, $annee, $id_cat, $id_real, $id_act);
+		$idfilm=getIdFilm($nomfilm, $annee);
+		createfilmforajouter($note,$vu,$idfilm,$idutil);
 		echo "Film ajouté, vous allez être redirigé vers le formulaire d'ajout de film.";
 		header('refresh:3;url=/user/ajoutfilm');
 	}
