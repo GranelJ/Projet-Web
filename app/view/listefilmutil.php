@@ -20,7 +20,7 @@
 		<table>
 			<tr>
 				<th>Nom film</th>
-				<th>Anne film</th>
+				<th>Annee film</th>
 				<th>Note</th>
 				<th>1 si Vu</th>
 			</tr>
