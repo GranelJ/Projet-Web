@@ -26,7 +26,7 @@
 				<datalist id="categories">
 					<?php
 						while ($choix=$cat->fetch()){
-							echo "<option value=".$choix[0].">".$choix[0]."</option>";
+							echo "<option value=".$choix[0].">";
 					 		}
 					?>  <!--tous les types de film dans la bd-->
 				</datalist>
@@ -54,7 +54,6 @@
                 <input type="text" name="prenomRealisateur" class="form-control" aria-describedby="basic-addon1">
             </div>
 			<br>
-			Nom acteur principal : <br>
 			<div class="input-group">
                 <span class="input-group-addon" id="basic-addon1">Nom de l'acteur/actrice principal(e)</span>
                 <input type="text" name="nomPActeur" class="form-control" aria-describedby="basic-addon1">
