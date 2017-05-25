@@ -17,25 +17,31 @@
 		<a href="/user/ajoutfilm"><button type="button" class="btn btn-success">Ajouter un film</button></a>
 		<a href="/user/suppressionfilm"><button type="button" class="btn btn-primary">Supprimer un film</button></a>
 		<a href="/deconnexion"><button type="button" class="btn btn-danger">Deconnexion</button></a>
-		<table>
-			<tr>
-				<th>Nom film</th>
-				<th>Annee film</th>
-				<th>Note</th>
-				<th>1 si Vu</th>
-			</tr>
-			<?php
-				while($ligne1=$film->fetch()){
-					$infofilm=getNameFilmById($ligne1[id_film]);
-					echo "<tr>";
-					echo "<td>$infofilm[nom_film]</td>";
-					echo "<td>$infofilm[annee_film]</td>";
-					echo"<td>$ligne1[note_film]</td>";
-					echo"<td>$ligne1[vu]</td>";
-					echo"</tr>";
-				}
-			?>
-		</table>
+		<div class="container">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Nom film</th>
+						<th>Annee film</th>
+						<th>Note</th>
+						<th>1 si Vu</th>
+					</tr>
+				</thead>
+				<tbody>
+				<?php
+					while($ligne1=$film->fetch()){
+						$infofilm=getNameFilmById($ligne1[id_film]);
+						echo "<tr>";
+						echo "<td>$infofilm[nom_film]</td>";
+						echo "<td>$infofilm[annee_film]</td>";
+						echo"<td>$ligne1[note_film]</td>";
+						echo"<td>$ligne1[vu]</td>";
+						echo"</tr>";
+					}
+				?>
+				</tbody>
+			</table>
+		</div>
 		<!--tous les films de l'utilisateur-->
 	</body>
 </html>
