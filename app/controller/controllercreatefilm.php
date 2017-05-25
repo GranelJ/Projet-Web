@@ -3,6 +3,7 @@
 	require_once("../model/ModelRealisateur.php");
 	require_once("../model/ModelCategorieFilm.php");
 	require_once("../model/ModelFilm.php");
+	require_once("../model/ModelAjouter.php");
 
 	if(!empty($_POST['nomFilm']) AND !empty($_POST['catFilm']) AND !empty($_POST['annee']) AND 
 	!empty($_POST['note']) AND !empty($_POST['nomRealisateur']) AND !empty($_POST['prenomRealisateur']) AND 
