@@ -16,30 +16,53 @@
 		<h1> Ajouter un film </h1>
 		<form method="POST" action="/app/controller/controllercreatefilm.php"> 
 			Nom du film : <br>
-			<input type="text" name="NomFilm"><br>
+			<div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Nom du film</span>
+                <input type="text" name="nomFilm" class="form-control" aria-describedby="basic-addon1">
+            </div>
+			<br>
 			Categorie : <br>
-			<select name="Categorie_Film" size ="1">
+			<select name="catFilm" size ="1">
 				<?php
 					while ($choix=$cat->fetch()){
 						echo "<option value=".$choix[0].">".$choix[0]."</option>";
 					 	}
 				?>  <!--tous les types de film dans la bd-->
 			</select> <br>
-			Annee : <br>
-			<input type="number" name="Annee"><br>
-			Vu : <br>
+			<div class="input-group">
+  				<span class="input-group-addon">Année</span>
+  				<input type="number" name="annee" class="form-control" aria-label="Amount">
+			</div>
+			<br>
+			Vu :
 			<input type="checkbox" name="Vu" value="vu"><br>
-			Note /5 : <br>
-			<input type="number" name="Note"><br>
-			Nom realisateur : <br>
-			<input type="text" name="NomRealisateur"><br>
-			Prenom realisateur : <br>
-			<input type="text" name="PrenomRealisateur"><br>
+			<div class="input-group">
+  				<span class="input-group-addon">Note</span>
+  				<input type="number" name="note" class="form-control" aria-label="Amount">
+  				<span class="input-group-addon">/5</span>
+			</div>
+			<br>
+			<div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Nom du realisateur</span>
+                <input type="text" name="nomRealisateur" class="form-control" aria-describedby="basic-addon1">
+            </div>
+			<br>
+			<div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Prenom du realisateur</span>
+                <input type="text" name="prenomRealisateur" class="form-control" aria-describedby="basic-addon1">
+            </div>
+			<br>
 			Nom acteur principal : <br>
-			<input type="text" name="NomPActeur"><br>
-			Prenom acteur principal : <br>
-			<input type="text" name="PrenomPActeur"><br>
-
+			<div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Nom de l'acteur/actrice principal(e)</span>
+                <input type="text" name="nomPActeur" class="form-control" aria-describedby="basic-addon1">
+            </div>
+			<br>
+			<div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Prenom de l'acteur/actrice principal(e) realisateur</span>
+                <input type="text" name="prenomPActeur" class="form-control" aria-describedby="basic-addon1">
+            </div>
+			<br>
             <button type="Submit" name="Addfilm" class="btn btn-default">Valider</button>
 			<a href="/user/listefilm"><button type="button" class="btn btn-default">Retour</button></a> <!--Bouton retour-->
 		</form>

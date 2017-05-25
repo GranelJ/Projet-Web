@@ -4,19 +4,19 @@
 	require_once("../model/ModelCategorieFilm.php");
 	require_once("../model/ModelFilm.php");
 
-	if(!empty($_POST['NomFilm']) AND !empty($_POST['Categorie_Film']) AND !empty($_POST['Annee']) AND 
-	!empty($_POST['Note']) AND !empty($_POST['NomRealisateur']) AND !empty($_POST['PrenomRealisateur']) AND 
-	!empty($_POST['NomPActeur']) AND !empty($_POST['PrenomPActeur'])){
+	if(!empty($_POST['nomFilm']) AND !empty($_POST['catFilm']) AND !empty($_POST['annee']) AND 
+	!empty($_POST['note']) AND !empty($_POST['nomRealisateur']) AND !empty($_POST['prenomRealisateur']) AND 
+	!empty($_POST['nomPActeur']) AND !empty($_POST['prenomPActeur'])){
 		//si tous les champs remplis
-		$nomfilm = htmlspecialchars($_POST['NomFilm']);
-		$cat = htmlspecialchars($_POST['Categorie_Film']);
-		$annee = htmlspecialchars($_POST['Annee']);
+		$nomfilm = htmlspecialchars($_POST['nomFilm']);
+		$cat = htmlspecialchars($_POST['catFilm']);
+		$annee = htmlspecialchars($_POST['annee']);
 		$vu = htmlspecialchars($_POST['Vu']);
-		$note = htmlspecialchars($_POST['Note']);
-		$nomrealisateur = htmlspecialchars($_POST['NomRealisateur']);
-		$prenomrealisateur = htmlspecialchars($_POST['PrenomRealisateur']);
-		$nompacteur = htmlspecialchars($_POST['NomPActeur']);
-		$prenompacteur = htmlspecialchars($_POST['PrenomPActeur']);
+		$note = htmlspecialchars($_POST['note']);
+		$nomrealisateur = htmlspecialchars($_POST['nomRealisateur']);
+		$prenomrealisateur = htmlspecialchars($_POST['prenomRealisateur']);
+		$nompacteur = htmlspecialchars($_POST['nomPActeur']);
+		$prenompacteur = htmlspecialchars($_POST['prenomPActeur']);
 
 		$existact = getIdAct($nompacteur,$prenompacteur);
 		if (empty($existact)){//si acteur existe pas
