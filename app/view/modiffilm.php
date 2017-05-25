@@ -35,7 +35,7 @@
 			</div>
 			<br>
 			Vu :
-			<input type="checkbox" name="Vu" value="vu"><br>
+			<input type="checkbox" name="Vu" value="true"><br>
 			<div class="input-group">
   				<span class="input-group-addon">Note</span>
   				<input type="number" name="note" class="form-control" aria-label="Amount" min="0" max="5">
