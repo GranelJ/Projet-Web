@@ -32,8 +32,8 @@
 		$id_cat = getIdCat($cat);
 		createFilm($nomfilm, $annee, $id_cat, $id_real, $id_act);
 		echo "Film ajouté, vous allez être redirigé vers le formulaire d'ajout de film.";
-		header('refresh:4;url=/user/ajoutfilm');
+		header('refresh:3;url=/user/ajoutfilm');
 	}
 	echo "L'un des champs n'est pas rempli";
-	header('refresh:3;url=/user/ajoutfilm');
+	header('refresh:2;url=/user/ajoutfilm');
 ?>
