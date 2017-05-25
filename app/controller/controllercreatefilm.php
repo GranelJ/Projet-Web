@@ -6,7 +6,7 @@
 	require_once("../model/ModelAjouter.php");
 
 	if(!empty($_POST['nomFilm']) AND !empty($_POST['catFilm']) AND !empty($_POST['annee']) AND !empty($_POST['nomRealisateur']) 
-	AND !empty($_POST['prenomRealisateur']) AND !empty($_POST['nomPActeur']) AND !empty($_POST['prenomPActeur'])){
+	AND !empty($_POST['prenomRealisateur']) AND !empty($_POST['nomPActeur']) AND !empty($_POST['prenomPActeur']) AND !empty($_POST['Vu'])){
 		//si tous les champs remplis
 		if(empty($_POST['Vu'])){
 			$vu=false;
