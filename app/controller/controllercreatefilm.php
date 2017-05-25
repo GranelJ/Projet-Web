@@ -33,7 +33,6 @@
 		$id_cat = getIdCat($cat);
 		$idutil=$_COOKIE['info'];
 		createFilm($nomfilm, $annee, $id_cat, $id_real, $id_act);
-		sleep(1);
 		$idfilm=getIdFilm($nomfilm, $annee);
 		createfilmforajouter($note,$vu,$idfilm,$idutil);
 		echo "Film ajouté, vous allez être redirigé vers le formulaire d'ajout de film.";

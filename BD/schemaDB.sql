@@ -59,7 +59,7 @@ CREATE TABLE ajouter(
 	id_film INTEGER,
 	id_utilisateur INTEGER,
 	CONSTRAINT PK_ajouter PRIMARY KEY (id_film, id_utilisateur),
-	CONSTRAINT "ajouter_fk1" FOREIGN KEY ("id_film") REFERENCES film("id_film") ON UPDATE CASCADE ON DELETE CASCADE,
+	CONSTRAINT "ajouter_fk1" FOREIGN KEY ("id_film") REFERENCES film("id_film") ON DELETE CASCADE,
 	CONSTRAINT "ajouter_fk2" FOREIGN KEY ("id_utilisateur") REFERENCES utilisateur("id_utilisateur") ON UPDATE CASCADE ON DELETE CASCADE
 );
 
