@@ -35,7 +35,11 @@
 						echo "<td>$infofilm[nom_film]</td>";
 						echo "<td>$infofilm[annee_film]</td>";
 						echo"<td>$ligne1[note_film]</td>";
-						echo"<td>$ligne1[vu]</td>";
+						if($ligne1[vu]==1){
+							echo"<td>Vu</td>";
+						}else{
+							echo"<td>Non vu</td>";
+						}
 						echo"</tr>";
 					}
 				?>
