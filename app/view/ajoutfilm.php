@@ -22,13 +22,15 @@
             </div>
 			<br>
 			Categorie : <br>
-			<select name="catFilm" size ="1">
-				<?php
-					while ($choix=$cat->fetch()){
-						echo "<option value=".$choix[0].">".$choix[0]."</option>";
-					 	}
-				?>  <!--tous les types de film dans la bd-->
-			</select> <br>
+			<input list="catsFilm" name="catFilm">
+				<datalist id="categories">
+					<?php
+						while ($choix=$cat->fetch()){
+							echo "<option value=".$choix[0].">".$choix[0]."</option>";
+					 		}
+					?>  <!--tous les types de film dans la bd-->
+				</datalist>
+			<br>
 			<div class="input-group">
   				<span class="input-group-addon">Année</span>
   				<input type="number" name="annee" class="form-control" aria-label="Amount">
@@ -38,7 +40,7 @@
 			<input type="checkbox" name="Vu" value="vu"><br>
 			<div class="input-group">
   				<span class="input-group-addon">Note</span>
-  				<input type="number" name="note" class="form-control" aria-label="Amount">
+  				<input type="number" name="note" class="form-control" aria-label="Amount" max="5" min="0">
   				<span class="input-group-addon">/5</span>
 			</div>
 			<br>
