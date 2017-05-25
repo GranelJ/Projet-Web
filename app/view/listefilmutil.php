@@ -18,10 +18,9 @@
 		<a href="/deconnexion"><button type="button" class="btn btn-danger">Deconnexion</button></a>
 		<table>
 			<tr>
-				<th>Nom</th>
-				<th>Annee</th>
+				<th>id_film</th>
 				<th>Note</th>
-				<th>Vu</th>
+				<th>1 si Vu</th>
 			</tr>
 			<?php
 				while($ligne1=$film->fetch()){
@@ -29,7 +28,6 @@
 					echo"<td>$ligne1[id_film]</td>";
 					echo"<td>$ligne1[note_film]</td>";
 					echo"<td>$ligne1[vu]</td>";
-					echo"<td>rien</td>";
 					echo"</tr>";
 				}
 			?>
