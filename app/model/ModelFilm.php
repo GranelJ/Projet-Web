@@ -83,7 +83,7 @@ require_once("Model.php");
 		global $bd;
    		try{
    			$req = $bd->execute('SELECT id_film FROM film WHERE nom_film = ? AND anneefilm =?');
-			$req->execute(array($nom ,$anneefilm));
+			$req->execute(array($nomfilm ,$anneefilm));
 			$res=$req->fetch();
    			return $res[0]; 
    		}
