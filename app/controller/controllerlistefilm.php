@@ -4,6 +4,4 @@
 
     $idutil = $_COOKIE["info"];
     $film = selectbyutil($idutil);
-    //$idfilm=$film[id_film];
-    //$nomfilm=getNameFilmById($idfilm);
 ?>
