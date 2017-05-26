@@ -12,8 +12,9 @@
 	</head>
 
 	<body>
-		<a href="/admin/ajoutcategorie"><button type="button" class="btn btn-success">Ajouter une categorie</button></a>
-		<a href="/admin/ajoutadministrateur"><button type="button" class="btn btn-success">Ajouter un administrateur</button></a>
-		<a href="/deconnexion"><button type="button" class="btn btn-danger">Deconnexion</button></a>
+		<h1>Movie's Friend</h1>
+			<a href="/admin/ajoutcategorie"><button type="button" class="btn btn-success">Ajouter une categorie</button></a>
+			<a href="/admin/ajoutadministrateur"><button type="button" class="btn btn-success">Ajouter un administrateur</button></a>
+			<a href="/deconnexion"><button type="button" class="btn btn-danger">Deconnexion</button></a>
 	</body>
 </html>

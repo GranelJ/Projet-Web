@@ -13,7 +13,8 @@
 	</head>
 
 	<body>
-		<h1> Ajouter un film </h1>
+		<h1>Movie's Friend</h1>
+		<h2> Ajouter un film </h2>
 		<form method="POST" action="/app/controller/controllercreatefilm.php"> 
 			<div class="input-group">
                 <span class="input-group-addon" id="basic-addon1">Nom du film</span>
