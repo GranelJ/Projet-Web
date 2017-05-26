@@ -29,7 +29,7 @@ require_once("Model.php");
     global $bd;
     try{
       $req = $bd->prepare('INSERT INTO administrateur (email_admin, mdp_admin) VALUES (?, ?)');
-      $req->execute(array($mail,$mdp));
+      $req->execute(array($email,$mdp));
     }
     catch(PDOException $e){
       echo($e->getMessage());
