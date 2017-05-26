@@ -15,12 +15,12 @@
         <form method="POST" action="/app/controller/controlleraddadmin.php">
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1">Email</span>
-                <input type="text" name="emailadmin" class="form-control" aria-describedby="basic-addon1">
+                <input type="email" name="emailadmin" class="form-control" aria-describedby="basic-addon1">
             </div>
             <br>
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1">Mot de passe</span>
-                <input type="text" name="mdpadmin" class="form-control" aria-describedby="basic-addon1">
+                <input type="password" name="mdpadmin" class="form-control" aria-describedby="basic-addon1">
             </div>
             <br>
             <button type="Submit" name="Addadmin" class="btn btn-default">Valider</button>
