@@ -23,7 +23,7 @@
 					<tr>
 						<th>Nom du film</th>
 						<th>Annee du film</th>
-						<th>Note donnée</th>
+						<th>Note</th>
 						<th>Vu</th>
 					</tr>
 				</thead>

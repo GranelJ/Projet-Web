@@ -20,7 +20,7 @@
                 <input type="text" name="nomFilm" class="form-control" aria-describedby="basic-addon1">
             </div>
 			<br>
-			Categorie : <br>
+			Catégorie : <br>
 			<select name="catFilm" size ="1">
 				<?php
 					while ($choix=$cat->fetch()){
@@ -42,12 +42,12 @@
 			</div>
 			<br>
 			<div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Nom du realisateur</span>
+                <span class="input-group-addon" id="basic-addon1">Nom du réalisateur</span>
                 <input type="text" name="nomRealisateur" class="form-control" aria-describedby="basic-addon1">
             </div>
 			<br>
 			<div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Prenom du realisateur</span>
+                <span class="input-group-addon" id="basic-addon1">Prenom du réalisateur</span>
                 <input type="text" name="prenomRealisateur" class="form-control" aria-describedby="basic-addon1">
             </div>
 			<br>
@@ -57,7 +57,7 @@
             </div>
 			<br>
 			<div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Prenom de l'acteur/actrice principal(e) realisateur</span>
+                <span class="input-group-addon" id="basic-addon1">Prenom de l'acteur/actrice principal(e)</span>
                 <input type="text" name="prenomPActeur" class="form-control" aria-describedby="basic-addon1">
             </div>
 			<br>

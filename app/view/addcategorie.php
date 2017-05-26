@@ -14,7 +14,7 @@
     <body>
         <form method="POST" action="/app/controller/controlleraddcategoriefilm.php">
 			<div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Categorie</span>
+                <span class="input-group-addon" id="basic-addon1">Catégorie</span>
                 <input type="text" name="namecat" class="form-control" placeholder="Nom de la catégorie à ajouter" aria-describedby="basic-addon1">
             </div>
 			<br>
